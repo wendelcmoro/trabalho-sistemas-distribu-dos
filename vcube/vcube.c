@@ -117,13 +117,13 @@ int main (int argc, char *argv[]) {
     for (i = 0; i < N; i++) {
         schedule(test, 30.0, i);
         schedule(test, 40.0, i);
-        schedule(test, 100.0, i);
+        // schedule(test, 100.0, i);
     }
 
     // // falha no tempo 31 o processo 1
-    schedule(fault, 29.0, 2);
-    schedule(fault, 29.0, 4);
-    schedule(fault, 29.0, 5);
+     schedule(fault, 29.0, 0);
+    schedule(fault, 29.0, 3);
+    // schedule(fault, 29.0, 5);
     // for (i = 1; i < N; i++) {
     //     schedule(recovery, 330.0, i);
     // } 
@@ -136,110 +136,59 @@ int main (int argc, char *argv[]) {
             case test: 
                     printf("Processo %d\n", token);
                     if (status(processo[token].id) != 0) {
+                        printf("processo %d FALHO\n\n", token);
                         break; // processo falho não testa!
                     }
 
-                    for (i = 0; i < N; i++) {
-                        if (i != token) {
-                            if (processo[token].tests[i] == 1) {
-                                if (status(processo[i].id) != 0) {
-                                    printf("o processo %d testou o processo %d INCORRETO no tempo %5.1f\n", token, i, time());
+                    for (int s = 1; s <= clusters; s++) {
+                        nodesAux = cis(token, s);
+                        
+                        
+                        for (int j = 0; j < nodesAux->size; j++) {
+                            nodes = cis(nodesAux->nodes[j], s);
 
-                                    processo[token].tests[i] = 0;
-                                    if (processo[token].state[i] == -1) {
-                                        processo[token].state[i] = 1;
+                            for (int k = 0; k < nodes->size; k++) {
+                                printf("%d\n", nodes->nodes[k]);
+                                
+
+                                if ((nodes->nodes[k] == token && k == 0) || (nodes->nodes[k] == token && k > 0 && processo[token].state[nodesAux->nodes[j]] != -1)) {
+                                    if (status(processo[nodesAux->nodes[j]].id) != 0) {
+                                        printf("o processo %d testou o processo %d INCORRETO no tempo %5.1f\n", token, nodesAux->nodes[j], time());
+
+                                        for (int ss = 2; ss <= clusters; ss++) {
+
+                                        }
+
+                                        //break;
                                     }
                                     else {
-                                        processo[token].state[i]++;
-                                    }
+                                        printf("o processo %d testou o processo %d CORRETO no tempo %5.1f\n", token, nodesAux->nodes[j], time());
 
-                                    for (int s = 1; s <= clusters; s++) {
-                                        for (int j = 0; j < N; j++) {
-                                            if (j != token && j != i) {
-                                                nodes = cis(j, s);
-                                                if (nodes->nodes[0] == i) {
-                                                    processo[token].tests[j] = 1;
-                                                }
-                                                set_free(nodes);
-                                            }                
+                                        if (processo[token].state[nodesAux->nodes[j]] % 2 == 1) {
+                                            processo[token].state[nodesAux->nodes[j]]++;
+
+                                            for (int m = nodesAux->nodes[j]; m < N; m++) {
+                                                processo[token].state[m] = processo[nodes->nodes[k]].state[m];
+                                            }
+
+                                            for (int m = 0; m < token; m++) {
+                                                processo[token].state[m] = processo[nodes->nodes[k]].state[m];
+                                            }
                                         }
-                                    }
-
-                                }
-                                else {
-                                    printf("o processo %d testou o processo %d CORRETO no tempo %5.1f\n", token, i, time());
-
-                                    processo[token].state[i] = 0;
-
-                                    for (int m = i; m < N; m++) {
-                                        if (processo[i].state[m] > processo[token].state[m]) {
-                                            processo[token].state[m] = processo[i].state[m];
+                                        else if (processo[token].state[nodesAux->nodes[j]] % 2 == 0) {
+                                            processo[token].state[nodesAux->nodes[j]]++;
                                         }
-                                    }
 
-                                    for (int m = 0; m < token; m++) {
-                                        if (processo[i].state[m] > processo[token].state[m]) {
-                                            processo[token].state[m] = processo[i].state[m];
-                                        }
+                                        break;
                                     }
                                 }
+                                // break;
                             }
+                            set_free(nodes);
                         }
                     }
-
-                    // for (int s = 1; s <= clusters; s++) {
-                    //     nodesAux = cis(token, s);
-                        
-                        
-                        // for (int j = 0; j < nodesAux->size; j++) {
-                        //     nodes = cis(nodesAux->nodes[j], s);
-
-                        //     int found = 0;
-                        //     for (int k = 0; k < nodes->size; k++) {
-                        //         if (nodes->nodes[k] == token) {
-                        //             if (processo[token].state[nodesAux->nodes[j]] == -1 || processo[token].state[nodesAux->nodes[j]] == 0) {
-                        //                 if (status(processo[nodesAux->nodes[j]].id) != 0) {
-                        //                     printf("o processo %d testou o processo %d INCORRETO no tempo %5.1f\n", token, nodesAux->nodes[j], time());
-                        //                     if (processo[token].state[nodesAux->nodes[nodesAux->nodes[j]]] == -1) {
-                        //                         processo[token].state[nodesAux->nodes[nodesAux->nodes[j]]] = 1;
-                        //                     }
-                        //                     else {
-                        //                         processo[token].state[nodesAux->nodes[nodesAux->nodes[j]]]++;
-                        //                     }
-
-                        //                     for (int l = 0; l < N; l++) {
-                        //                         if (l != token) {
-                        //                             processo[token].tests[l] = 1;
-                        //                         }
-                        //                     }
-                        //                     break;
-                        //                 }
-                        //                 else {
-                        //                     printf("o processo %d testou o processo %d CORRETO no tempo %5.1f\n", token, nodesAux->nodes[j], time());
-
-                        //                     processo[token].state[nodesAux->nodes[j]] = 0;
-
-                        //                     for (int m = nodesAux->nodes[j]; m < N; m++) {
-                        //                         processo[token].state[m] = processo[nodes->nodes[k]].state[m];
-                        //                     }
-
-                        //                     for (int m = 0; m < token; m++) {
-                        //                         processo[token].state[m] = processo[nodes->nodes[k]].state[m];
-                        //                     }
-
-                        //                     found++;
-                        //                     break;
-                        //                 }
-                        //             }
-                        //         }
-                        //     }
-                        //     set_free(nodes);
-
-                        //     if (found != 0) {
-                        //         break;
-                        //     }
-                        // }
-                    //}
+                    
+                    printf("\n");
 
                     break;
             case fault:
