@@ -1,30 +1,12 @@
-/* Disciplina Sistemas Distribuídos
-   Data da Última Modificação: 14/01/2022
-   Aluno Wendel Caio Moro
-   Tarefa 3
-*/
+/* --------------------------------------------------------------------------------------
+   Disciplina Sistemas Distribuídos
+   Objetivo: Implementação do VCube
+   Restricoes: O programa assume que o usuario entrou com os valores corretos, inteiros.
 
-// ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠛⢉⢉⠉⠉⠻⣿⣿⣿⣿⣿⣿
-// ⣿⣿⣿⣿⣿⣿⣿⠟⠠⡰⣕⣗⣷⣧⣀⣅⠘⣿⣿⣿⣿⣿
-// ⣿⣿⣿⣿⣿⣿⠃⣠⣳⣟⣿⣿⣷⣿⡿⣜⠄⣿⣿⣿⣿⣿
-// ⣿⣿⣿⣿⡿⠁⠄⣳⢷⣿⣿⣿⣿⡿⣝⠖⠄⣿⣿⣿⣿⣿
-// ⣿⣿⣿⣿⠃⠄⢢⡹⣿⢷⣯⢿⢷⡫⣗⠍⢰⣿⣿⣿⣿⣿
-// ⣿⣿⣿⡏⢀⢄⠤⣁⠋⠿⣗⣟⡯⡏⢎⠁⢸⣿⣿⣿⣿⣿
-// ⣿⣿⣿⠄⢔⢕⣯⣿⣿⡲⡤⡄⡤⠄⡀⢠⣿⣿⣿⣿⣿⣿
-// ⣿⣿⠇⠠⡳⣯⣿⣿⣾⢵⣫⢎⢎⠆⢀⣿⣿⣿⣿⣿⣿⣿
-// ⣿⣿⠄⢨⣫⣿⣿⡿⣿⣻⢎⡗⡕⡅⢸⣿⣿⣿⣿⣿⣿⣿
-// ⣿⣿⠄⢜⢾⣾⣿⣿⣟⣗⢯⡪⡳⡀⢸⣿⣿⣿⣿⣿⣿⣿
-// ⣿⣿⠄⢸⢽⣿⣷⣿⣻⡮⡧⡳⡱⡁⢸⣿⣿⣿⣿⣿⣿⣿
-// ⣿⣿⡄⢨⣻⣽⣿⣟⣿⣞⣗⡽⡸⡐⢸⣿⣿⣿⣿⣿⣿⣿
-// ⣿⣿⡇⢀⢗⣿⣿⣿⣿⡿⣞⡵⡣⣊⢸⣿⣿⣿⣿⣿⣿⣿
-// ⣿⣿⣿⡀⡣⣗⣿⣿⣿⣿⣯⡯⡺⣼⠎⣿⣿⣿⣿⣿⣿⣿
-// ⣿⣿⣿⣧⠐⡵⣻⣟⣯⣿⣷⣟⣝⢞⡿⢹⣿⣿⣿⣿⣿⣿
-// ⣿⣿⣿⣿⡆⢘⡺⣽⢿⣻⣿⣗⡷⣹⢩⢃⢿⣿⣿⣿⣿⣿
-// ⣿⣿⣿⣿⣷⠄⠪⣯⣟⣿⢯⣿⣻⣜⢎⢆⠜⣿⣿⣿⣿⣿
-// ⣿⣿⣿⣿⣿⡆⠄⢣⣻⣽⣿⣿⣟⣾⡮⡺⡸⠸⣿⣿⣿⣿
-// ⣿⣿⡿⠛⠉⠁⠄⢕⡳⣽⡾⣿⢽⣯⡿⣮⢚⣅⠹⣿⣿⣿
-// ⡿⠋⠄⠄⠄⠄⢀⠒⠝⣞⢿⡿⣿⣽⢿⡽⣧⣳⡅⠌⠻⣿
-// ⠁⠄⠄⠄⠄⠄⠐⡐⠱⡱⣻⡻⣝⣮⣟⣿⣻⣟⣻⡺⣊
+   Autores: Wendel Caiu Moro e Bruno Augusto Luvizott
+   Disciplina: Sistemas Distribuidos 2022-2
+   Data da ultima atualizacao: 22/01/2023
+----------------------------------------------------------------------------------------*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -51,13 +33,10 @@
 typedef struct
 {
     int id; /* identificador de facility SMPL */
-
     /* variáveis locais do processo são declaradas aqui */
     int nextTest; // indica qual o prox. processo que irá ser testado
-
-    int *state; // vetor State
-    int *tests; // vetor de quem testa o processo
-
+    int *state;   // vetor State
+    int *tests;   // vetor de quem testa o processo
     int nodeRound;
 } TipoProcesso;
 
@@ -90,8 +69,8 @@ int main(int argc, char *argv[])
     stream(1);
 
     int clusters = log2(N);
-    printf("Número de clusters: %d\n", clusters);
-    printf("Número de processos: %d\n", N);
+    printf(ANSI_COLOR_YELLOW"\n\n--> Número de clusters: %d\n", clusters);
+    printf("--> Número de processos: %d\n"ANSI_COLOR_RESET, N);
 
     node_set *nodes;
     node_set *nodesAux;
@@ -130,14 +109,14 @@ int main(int argc, char *argv[])
     //  }
 
     /*----- agora vem o loop principal do simulador -----*/
-
     while (time() < 400.0)
     {
         cause(&event, &token);
         switch (event)
         {
         case test:
-            printf("Processo %d\n", token);
+
+            printf(ANSI_COLOR_CYAN"Processo %d\n"ANSI_COLOR_RESET, token);
             processo[token].nodeRound++;
             if (status(processo[token].id) != 0)
             {
