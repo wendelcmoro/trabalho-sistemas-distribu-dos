@@ -285,16 +285,15 @@ int main(int argc, char *argv[])
                 break;
             }
 
-            printf("" ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n", token, time());
-            printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_RED "FALHOU" ANSI_COLOR_RESET "\n\n", token, time());
+            printf(ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n");
+            printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_RED "FALHOU" ANSI_COLOR_RESET "\n\n", time(), token);
 
             break;
         case recovery:
             release(processo[token].id, token);
 
-            printf("" ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n", token, time());
-            printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_GREEN "RECUPEROU" ANSI_COLOR_RESET " no tempo %5.1f\n", token, time());
-
+            printf(ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n");
+            printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_GREEN "RECUPEROU" ANSI_COLOR_RESET "\n\n", time(), token);
             memset(processo[token].state, -1, N * sizeof(int)); // Reinciando o vetor State
             processo[token].state[token] = 0;
             break;
