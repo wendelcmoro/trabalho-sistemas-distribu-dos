@@ -69,8 +69,8 @@ int main(int argc, char *argv[])
     stream(1);
 
     int clusters = log2(N);
-    printf(ANSI_COLOR_YELLOW"\n\n--> Número de clusters: %d\n", clusters);
-    printf("--> Número de processos: %d\n"ANSI_COLOR_RESET, N);
+    printf(ANSI_COLOR_YELLOW "\n\n--> Número de clusters: %d\n", clusters);
+    printf("--> Número de processos: %d\n" ANSI_COLOR_RESET, N);
 
     node_set *nodes;
     node_set *nodesAux;
@@ -96,11 +96,19 @@ int main(int argc, char *argv[])
     {
         schedule(test, 30.0, i);
         schedule(test, 60.0, i);
+        schedule(test, 90.0, i);
+        schedule(test, 120.0, i);
+        schedule(test, 150.0, i);
+        schedule(test, 180.0, i);
+        schedule(test, 210.0, i);
+        schedule(test, 240.0, i);
+        schedule(test, 270.0, i);
         //   schedule(test, 100.0, i);
     }
 
     // // falha no tempo 31 o processo 1
     schedule(fault, 29.0, 0);
+    // schedule(recovery, 150.0, 0);
     // schedule(fault, 29.0, 3);
     // schedule(fault, 29.0, 6);
     //  schedule(fault, 29.0, 5);
@@ -116,11 +124,11 @@ int main(int argc, char *argv[])
         {
         case test:
 
-            printf(ANSI_COLOR_CYAN"Processo %d\n"ANSI_COLOR_RESET, token);
+            printf(ANSI_COLOR_CYAN "Processo %d\n" ANSI_COLOR_RESET, token);
             processo[token].nodeRound++;
             if (status(processo[token].id) != 0)
             {
-                printf("[%6.1f]" ANSI_COLOR_RED " FALHEI! \n\n" ANSI_COLOR_RESET, time());
+                printf("[Tempo:%6.1f]" ANSI_COLOR_RED " FALHEI! \n\n" ANSI_COLOR_RESET, time());
                 break; // processo falho não testa!
             }
 
@@ -132,7 +140,7 @@ int main(int argc, char *argv[])
 
                 if (status(processo[nodesAux->nodes[0]].id) == 0)
                 {
-                    printf("o processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  " ANSI_COLOR_RESET " no tempo %5.1f\n", token, nodesAux->nodes[0], time());
+                    printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
 
                     if (processo[token].state[nodesAux->nodes[0]] % 2 != 0)
                     {
@@ -149,7 +157,7 @@ int main(int argc, char *argv[])
                 }
                 else
                 {
-                    printf("o processo %d testou o processo %d" ANSI_COLOR_RED " INCORRETO " ANSI_COLOR_RESET "no tempo %5.1f\n", token, nodesAux->nodes[0], time());
+                    printf("[Tempo:%6.1f] O processo %d testou o processo %d" ANSI_COLOR_RED " INCORRETO \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
 
                     if (processo[token].state[nodesAux->nodes[0]] == -1)
                     {
@@ -185,7 +193,7 @@ int main(int argc, char *argv[])
                                 tests++;
                                 if (status(processo[alvo].id) == 0)
                                 {
-                                    printf("o processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  " ANSI_COLOR_RESET " no tempo %5.1f\n", token, alvo, time());
+                                    printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, alvo);
 
                                     if (processo[token].state[alvo] % 2 != 0)
                                     {
@@ -194,7 +202,7 @@ int main(int argc, char *argv[])
                                 }
                                 else
                                 {
-                                    printf("o processo %d testou o processo %d " ANSI_COLOR_RED "INCORRETO" ANSI_COLOR_RESET " no tempo %5.1f\n", token, alvo, time());
+                                    printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_RED "INCORRETO \n" ANSI_COLOR_RESET, time(), token, alvo);
 
                                     if (processo[token].state[alvo] % 2 != 1)
                                     {
@@ -204,6 +212,7 @@ int main(int argc, char *argv[])
                             }
                             else
                             {
+                                // Fazer: Verificar se um processo desconhecido(-1) deve ser testado
                                 if ((processo[token].state[aux] % 2) == 0)
                                 {
                                     break;
@@ -233,22 +242,24 @@ int main(int argc, char *argv[])
             if (detectNextRound == 1)
             {
                 int detectLatency = 1;
-                printf("Vetor states na rodada de testes %d:\n", round);
+                printf(ANSI_COLOR_CYAN"Vetor states na rodada de testes %d:\n"ANSI_COLOR_RESET, round);
                 for (i = 0; i < N; i++)
                 {
-                    printf("Processo %d :", i);
+                    printf(ANSI_COLOR_BLUE"Processo %d"ANSI_COLOR_RESET": [", i);
 
                     for (int j = 0; j < N; j++)
                     {
-                        printf("%d ", processo[i].state[j]);
-
                         if (processo[i].state[j] == -1)
                         {
                             detectLatency = 0;
+                            printf(" -");
                         }
+                        else
+                            printf("%2d", processo[i].state[j]);
                     }
+                    printf(" ]\n");
 
-                    printf("\n");
+                    // printf("\n");
                     if (detectLatency == 1)
                     {
                         printf("Latência: %d\n", round + 1);
@@ -266,13 +277,15 @@ int main(int argc, char *argv[])
                 puts("Não foi possível falhar o nodo...");
                 break;
             }
-            printf("o processo %d falhou no tempo %5.1f\n", token, time());
+
+            printf("" ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n", token, time());
+            printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_RED "FALHOU" ANSI_COLOR_RESET "\n\n", token, time());
             break;
         case recovery:
             release(processo[token].id, token);
             printf("o processo %d recuperou no tempo %5.1f\n", token, time());
             // schedule(test, 30.0, token);
             break;
-        } /* end switch */
-    }     /* end while */
-} /* end tempo.c */
+        }
+    }
+}
