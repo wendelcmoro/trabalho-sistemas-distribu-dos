@@ -97,18 +97,25 @@ int main(int argc, char *argv[])
         schedule(test, 30.0, i);
         schedule(test, 60.0, i);
         schedule(test, 90.0, i);
-        schedule(test, 120.0, i);
-        schedule(test, 150.0, i);
-        schedule(test, 180.0, i);
-        schedule(test, 210.0, i);
-        schedule(test, 240.0, i);
-        schedule(test, 270.0, i);
+        // schedule(test, 120.0, i);
+        // schedule(test, 150.0, i);
+        // schedule(test, 180.0, i);
+        // schedule(test, 210.0, i);
+        // schedule(test, 240.0, i);
+        // schedule(test, 270.0, i);
         //   schedule(test, 100.0, i);
     }
 
     // // falha no tempo 31 o processo 1
     schedule(fault, 29.0, 0);
-    // schedule(recovery, 150.0, 0);
+    schedule(fault, 29.0, 3);
+
+
+
+    // schedule(recovery, 90.0, 0);
+    // schedule(fault, 150.0, 0);
+    // schedule(recovery, 180.0, 0);
+    // schedule(fault, 240.0, 0);
     // schedule(fault, 29.0, 3);
     // schedule(fault, 29.0, 6);
     //  schedule(fault, 29.0, 5);
@@ -147,7 +154,7 @@ int main(int argc, char *argv[])
                         processo[token].state[nodesAux->nodes[0]]++;
                     }
 
-                    for (int m = (nodesAux->nodes[0] + 1) % N; m != token; m++, m %= N)
+                    for (int m = (token + 1) % N; m != token; m++, m %= N)
                     {
                         if (processo[nodesAux->nodes[0]].state[m] > processo[token].state[m])
                         {
@@ -199,6 +206,13 @@ int main(int argc, char *argv[])
                                     {
                                         processo[token].state[alvo]++;
                                     }
+                                    for (int m = (token + 1) % N; m != token; m++, m %= N)
+                                    {
+                                        if (processo[alvo].state[m] > processo[token].state[m])
+                                        {
+                                            processo[token].state[m] = processo[alvo].state[m];
+                                        }
+                                    }
                                 }
                                 else
                                 {
@@ -212,8 +226,7 @@ int main(int argc, char *argv[])
                             }
                             else
                             {
-                                // Fazer: Verificar se um processo desconhecido(-1) deve ser testado
-                                if ((processo[token].state[aux] % 2) == 0)
+                                if ((processo[token].state[aux] % 2) == 0 || processo[token].state[aux] == -1)
                                 {
                                     break;
                                 }
@@ -242,10 +255,10 @@ int main(int argc, char *argv[])
             if (detectNextRound == 1)
             {
                 int detectLatency = 1;
-                printf(ANSI_COLOR_CYAN"Vetor states na rodada de testes %d:\n"ANSI_COLOR_RESET, round);
+                printf(ANSI_COLOR_CYAN "Vetor states na rodada de testes %d:\n" ANSI_COLOR_RESET, round);
                 for (i = 0; i < N; i++)
                 {
-                    printf(ANSI_COLOR_BLUE"Processo %d"ANSI_COLOR_RESET": [", i);
+                    printf(ANSI_COLOR_BLUE "Processo %2d" ANSI_COLOR_RESET ": [", i);
 
                     for (int j = 0; j < N; j++)
                     {
@@ -260,10 +273,10 @@ int main(int argc, char *argv[])
                     printf(" ]\n");
 
                     // printf("\n");
-                    if (detectLatency == 1)
-                    {
-                        printf("Latência: %d\n", round + 1);
-                    }
+                }
+                if (detectLatency == 1)
+                {
+                    printf("Latência: %d\n", round + 1);
                 }
                 printf("Número de testes executado até o momento: %d\n\n", tests);
                 round++;
