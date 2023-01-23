@@ -68,7 +68,8 @@ int main(int argc, char *argv[])
     reset();
     stream(1);
 
-    int clusters = log2(N);
+    int clusters = ceil(log2(N));
+
     printf(ANSI_COLOR_YELLOW "\n\n--> Número de clusters: %d\n", clusters);
     printf("--> Número de processos: %d\n" ANSI_COLOR_RESET, N);
 
@@ -108,7 +109,7 @@ int main(int argc, char *argv[])
 
     // // falha no tempo 31 o processo 1
     schedule(fault, 29.0, 0);
-    schedule(fault, 29.0, 3);
+    // schedule(fault, 29.0, 3);
 
     // schedule(recovery, 90.0, 0);
     // schedule(fault, 150.0, 0);
@@ -140,6 +141,10 @@ int main(int argc, char *argv[])
             for (int s = 1; s <= clusters; s++)
             {
                 nodesAux = cis(token, s);
+
+                // Não testar processos que não existem
+                if (nodesAux->nodes[0] >= N)
+                    continue;
 
                 tests++;
 
@@ -260,7 +265,9 @@ int main(int argc, char *argv[])
                     {
                         if (processo[i].state[j] == -1)
                         {
-                            detectLatency = 0;
+                            if (processo[i].state[i] == 0)
+                                detectLatency = 0;
+
                             printf(" -");
                         }
                         else
