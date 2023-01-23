@@ -110,8 +110,6 @@ int main(int argc, char *argv[])
     schedule(fault, 29.0, 0);
     schedule(fault, 29.0, 3);
 
-
-
     // schedule(recovery, 90.0, 0);
     // schedule(fault, 150.0, 0);
     // schedule(recovery, 180.0, 0);
@@ -232,11 +230,9 @@ int main(int argc, char *argv[])
                                 }
                             }
                         }
-
                         set_free(nodes);
                     }
                 }
-
                 set_free(nodesAux);
             }
 
@@ -271,8 +267,6 @@ int main(int argc, char *argv[])
                             printf("%2d", processo[i].state[j]);
                     }
                     printf(" ]\n");
-
-                    // printf("\n");
                 }
                 if (detectLatency == 1)
                 {
@@ -293,11 +287,16 @@ int main(int argc, char *argv[])
 
             printf("" ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n", token, time());
             printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_RED "FALHOU" ANSI_COLOR_RESET "\n\n", token, time());
+
             break;
         case recovery:
             release(processo[token].id, token);
-            printf("o processo %d recuperou no tempo %5.1f\n", token, time());
-            // schedule(test, 30.0, token);
+
+            printf("" ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n", token, time());
+            printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_GREEN "RECUPEROU" ANSI_COLOR_RESET " no tempo %5.1f\n", token, time());
+
+            memset(processo[token].state, -1, N * sizeof(int)); // Reinciando o vetor State
+            processo[token].state[token] = 0;
             break;
         }
     }
