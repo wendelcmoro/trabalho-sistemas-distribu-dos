@@ -37,6 +37,7 @@ typedef struct
     int nextTest; // indica qual o prox. processo que irá ser testado
     int *state;   // vetor State
     int *tests;   // vetor de quem testa o processo
+    int current_cluster;
     int nodeRound;
 } TipoProcesso;
 
@@ -84,6 +85,7 @@ int main(int argc, char *argv[])
         memset(fa_name, '\0', 5);
         sprintf(fa_name, "%d", i);
         processo[i].id = facility(fa_name, 1);
+        processo[i].current_cluster = 1;
         processo[i].state = (int *)malloc(sizeof(int) * N);
         memset(processo[i].state, -1, N * sizeof(int));
         processo[i].state[i] = 0;
@@ -95,8 +97,8 @@ int main(int argc, char *argv[])
     /*----- vamos escalonar os eventos iniciais -----*/
     for (i = 0; i < N; i++)
     {
-        schedule(test, 30.0, i);
-        // schedule(test, 60.0, i);
+        schedule(test, 20.0, i);
+        // schedule(test, 30.0, i);
         // schedule(test, 90.0, i);
         // schedule(test, 120.0, i);
         // schedule(test, 150.0, i);
@@ -108,7 +110,7 @@ int main(int argc, char *argv[])
     }
 
     // // falha no tempo 31 o processo 1
-    // schedule(fault, 29.0, 0);
+    // schedule(fault, 10.0, 0);
     // schedule(fault, 29.0, 3);
 
     // schedule(recovery, 90.0, 0);
@@ -123,7 +125,7 @@ int main(int argc, char *argv[])
     //  }
 
     /*----- agora vem o loop principal do simulador -----*/
-    while (time() < 400.0)
+    while (time() < 400000.0)
     {
         cause(&event, &token);
         switch (event)
@@ -138,122 +140,152 @@ int main(int argc, char *argv[])
                 break; // processo falho não testa!
             }
 
-            for (int s = 1; s <= clusters; s++)
+            int s = processo[token].current_cluster;
+
+            nodesAux = cis(token, s);
+            // Não testar processos que não existem
+            if (nodesAux->nodes[0] >= N)
+                continue;
+
+            tests++;
+            if (status(processo[nodesAux->nodes[0]].id) == 0)
             {
-                nodesAux = cis(token, s);
+                printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
 
-                // Não testar processos que não existem
-                if (nodesAux->nodes[0] >= N)
-                    continue;
-
-                tests++;
-
-                if (status(processo[nodesAux->nodes[0]].id) == 0)
+                if (processo[token].state[nodesAux->nodes[0]] % 2 != 0)
                 {
-                    printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
-
-                    if (processo[token].state[nodesAux->nodes[0]] % 2 != 0)
-                    {
-                        processo[token].state[nodesAux->nodes[0]]++;
-                    }
-
-                    for (int m = (token + 1) % N; m != token; m++, m %= N)
-                    {
-                        if (processo[nodesAux->nodes[0]].state[m] > processo[token].state[m])
-                        {
-                            processo[token].state[m] = processo[nodesAux->nodes[0]].state[m];
-                        }
-                    }
-                }
-                else
-                {
-                    printf("[Tempo:%6.1f] O processo %d testou o processo %d" ANSI_COLOR_RED " INCORRETO \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
-
-                    if (processo[token].state[nodesAux->nodes[0]] == -1)
-                    {
-                        processo[token].state[nodesAux->nodes[0]] = 1;
-                    }
-
-                    if ((processo[token].state[nodesAux->nodes[0]] % 2) != 1)
-                    {
-                        processo[token].state[nodesAux->nodes[0]]++;
-                    }
+                    processo[token].state[nodesAux->nodes[0]]++;
                 }
 
-                int aux;
-                int alvo;
-                for (int k = 0; k < N; k++)
+                for (int m = (token + 1) % N; m != token; m++, m %= N)
+                {
+                    if (processo[nodesAux->nodes[0]].state[m] > processo[token].state[m])
+                    {
+                        processo[token].state[m] = processo[nodesAux->nodes[0]].state[m];
+                    }
+                }
+            }
+            else
+            {
+                printf("[Tempo:%6.1f] O processo %d testou o processo %d" ANSI_COLOR_RED " INCORRETO \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
+
+                if (processo[token].state[nodesAux->nodes[0]] == -1)
+                {
+                    processo[token].state[nodesAux->nodes[0]] = 1;
+                }
+
+                if ((processo[token].state[nodesAux->nodes[0]] % 2) != 1)
+                {
+                    processo[token].state[nodesAux->nodes[0]]++;
+                }
+            }
+
+            int aux;
+            int alvo;
+            for (int k = 0; k < N; k++)
+            {
+
+                if ((processo[token].state[k] % 2) == 1)
                 {
 
-                    if ((processo[token].state[k] % 2) == 1)
+                    nodes = cis(k, s);
+                    alvo = nodes->nodes[0];
+
+                    set_free(nodes);
+                    nodes = cis(alvo, s);
+
+                    for (int m = 0; m < nodes->size; m++)
                     {
+                        aux = nodes->nodes[m];
 
-                        nodes = cis(k, s);
-                        alvo = nodes->nodes[0];
-
-                        set_free(nodes);
-                        nodes = cis(alvo, s);
-
-                        for (int m = 0; m < nodes->size; m++)
+                        if (aux == token && alvo != token)
                         {
-                            aux = nodes->nodes[m];
-
-                            if (aux == token && alvo != token)
+                            tests++;
+                            if (status(processo[alvo].id) == 0)
                             {
-                                tests++;
-                                if (status(processo[alvo].id) == 0)
-                                {
-                                    printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, alvo);
+                                printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, alvo);
 
-                                    if (processo[token].state[alvo] % 2 != 0)
-                                    {
-                                        processo[token].state[alvo]++;
-                                    }
-                                    for (int m = (token + 1) % N; m != token; m++, m %= N)
-                                    {
-                                        if (processo[alvo].state[m] > processo[token].state[m])
-                                        {
-                                            processo[token].state[m] = processo[alvo].state[m];
-                                        }
-                                    }
+                                if (processo[token].state[alvo] % 2 != 0)
+                                {
+                                    processo[token].state[alvo]++;
                                 }
-                                else
+                                for (int m = (token + 1) % N; m != token; m++, m %= N)
                                 {
-                                    printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_RED "INCORRETO \n" ANSI_COLOR_RESET, time(), token, alvo);
-
-                                    if (processo[token].state[alvo] % 2 != 1)
+                                    if (processo[alvo].state[m] > processo[token].state[m])
                                     {
-                                        processo[token].state[alvo]++;
+                                        processo[token].state[m] = processo[alvo].state[m];
                                     }
                                 }
                             }
                             else
                             {
-                                if ((processo[token].state[aux] % 2) == 0 || processo[token].state[aux] == -1)
+                                printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_RED "INCORRETO \n" ANSI_COLOR_RESET, time(), token, alvo);
+
+                                if (processo[token].state[alvo] % 2 != 1)
                                 {
-                                    break;
+                                    processo[token].state[alvo]++;
                                 }
                             }
                         }
-                        set_free(nodes);
+                        else
+                        {
+                            if ((processo[token].state[aux] % 2) == 0 || processo[token].state[aux] == -1)
+                            {
+                                break;
+                            }
+                        }
                     }
+                    set_free(nodes);
                 }
-                set_free(nodesAux);
             }
+            set_free(nodesAux);
 
             printf("\n");
 
-            int detectNextRound = 1;
-            for (i = 0; i < N; i++)
-            {
-                if (processo[i].nodeRound == round)
-                {
-                    detectNextRound = 0;
-                    break;
-                }
-            }
+            // int detectNextRound = 1;
+            // for (i = 0; i < N; i++)
+            // {
+            //     if (processo[i].nodeRound == round)
+            //     {
+            //         detectNextRound = 0;
+            //         break;
+            //     }
+            // }
 
-            if (detectNextRound == 1)
+            // if (detectNextRound == 1)
+            // {
+            // int detectLatency = 1;
+            // printf(ANSI_COLOR_CYAN "Vetor states na rodada de testes %d:\n" ANSI_COLOR_RESET, round);
+            // for (i = 0; i < N; i++)
+            // {
+            //     printf(ANSI_COLOR_BLUE "Processo %2d" ANSI_COLOR_RESET ": [", i);
+
+            //     for (int j = 0; j < N; j++)
+            //     {
+            //         if (processo[i].state[j] == -1)
+            //         {
+            //             if (processo[i].state[i] == 0)
+            //                 detectLatency = 0;
+
+            //             printf(" -");
+            //         }
+            //         else
+            //             printf("%2d", processo[i].state[j]);
+            //     }
+            //     printf(" ]\n");
+            // }
+            // if (detectLatency == 1)
+            // {
+            //     printf("Latência: %d\n", round + 1);
+            // }
+            // printf("Número de testes executado até o momento: %d\n\n", tests);
+            // round++;
+            // }
+
+            // Print vetor fim da rodada:
+            processo[token].current_cluster = processo[token].current_cluster + 1;
+
+            if (token == N - 1 && processo[token].current_cluster > clusters)
             {
                 int detectLatency = 1;
                 printf(ANSI_COLOR_CYAN "Vetor states na rodada de testes %d:\n" ANSI_COLOR_RESET, round);
@@ -282,6 +314,13 @@ int main(int argc, char *argv[])
                 printf("Número de testes executado até o momento: %d\n\n", tests);
                 round++;
             }
+
+            if (processo[token].current_cluster <= clusters)
+            {
+                schedule(test, time() + 1, token);
+            }
+            else
+                processo[token].current_cluster = 1;
 
             break;
         case fault:
