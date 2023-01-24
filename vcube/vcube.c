@@ -96,19 +96,19 @@ int main(int argc, char *argv[])
     for (i = 0; i < N; i++)
     {
         schedule(test, 30.0, i);
-        schedule(test, 60.0, i);
-        schedule(test, 90.0, i);
+        // schedule(test, 60.0, i);
+        // schedule(test, 90.0, i);
         // schedule(test, 120.0, i);
         // schedule(test, 150.0, i);
         // schedule(test, 180.0, i);
         // schedule(test, 210.0, i);
         // schedule(test, 240.0, i);
         // schedule(test, 270.0, i);
-        //   schedule(test, 100.0, i);
+        // schedule(test, 100.0, i);
     }
 
     // // falha no tempo 31 o processo 1
-    schedule(fault, 29.0, 0);
+    // schedule(fault, 29.0, 0);
     // schedule(fault, 29.0, 3);
 
     // schedule(recovery, 90.0, 0);
