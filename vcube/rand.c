@@ -9,6 +9,8 @@
 /**********************************************************************/
 
 #include <math.h>
+
+
 typedef double real;
 
 #define then
@@ -22,6 +24,7 @@ static long In[16]= {0L,   /* seeds for streams 1 thru 15  */
   1124933064L, 1223960546L, 1878892440L, 1449793615L,  553303732L};
 
 static int strm=1;         /* index of current stream */
+
 
 /*-------------  UNIFORM [0, 1] RANDOM NUMBER GENERATOR  -------------*/
 /*                                                                    */
