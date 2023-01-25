@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
     for (i = 0; i < N; i++)
     {
         schedule(test, 20.0, i);
-        // schedule(test, 30.0, i);
+        schedule(test, 30.0, i);
         // schedule(test, 90.0, i);
         // schedule(test, 120.0, i);
         // schedule(test, 150.0, i);
@@ -110,8 +110,8 @@ int main(int argc, char *argv[])
     }
 
     // // falha no tempo 31 o processo 1
-    // schedule(fault, 10.0, 0);
-    // schedule(fault, 29.0, 3);
+    schedule(fault, 10.0, 0);
+    schedule(fault, 10.0, 3);
 
     // schedule(recovery, 90.0, 0);
     // schedule(fault, 150.0, 0);
@@ -283,7 +283,7 @@ int main(int argc, char *argv[])
             // }
 
             // Print vetor fim da rodada:
-            processo[token].current_cluster = processo[token].current_cluster + 1;
+            processo[token].current_cluster++;
 
             if (token == N - 1 && processo[token].current_cluster > clusters)
             {
