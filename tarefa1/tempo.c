@@ -1,6 +1,6 @@
 /* Disciplina Sistemas Distribuídos 
-   Data da Última Modificação: 14/01/2022
-   Aluno Wendel Caio Moro
+   Data da Última Modificação: 25/01/2022
+   Aluno Wendel Caio Moro GRR20182641
    Tarefa 1
 */
 
@@ -47,40 +47,34 @@ int main (int argc, char *argv[]) {
     reset();
     stream(1);
  
-/*----- inicializacao -----*/
-
+    /*----- inicializacao -----*/
+    printf("Simulando vRing com %d processos\n\n", N);
     processo = (TipoProcesso *) malloc(sizeof(TipoProcesso)*N);
-
     for (int i = 0; i < N; i++) {
         memset (fa_name, '\0', 5);
         sprintf(fa_name, "%d", i);
         processo[i].id = facility(fa_name,1);
-        printf("fa_name = %s, processo[%d].id = %d\n", fa_name, i, processo[i].id);
+        //printf("fa_name = %s, processo[%d].id = %d\n", fa_name, i, processo[i].id);
 
         // indica com qual processo, o nodo i irá começar testando
         processo[i].nextTest = (i+1) % N;
-
-
-        // aloca espaço para o vetor State[]
-        // Inicia todos os valores para -1 com exceção do valor i
-        // 0 indica que o processo está correto, -1 desconhecido, e 1 que está falho
     } /* end for */
         
-/*----- vamos escalonar os eventos iniciais -----*/
+    /*----- Escalona os testes -----*/
+    int nextInterval = 30;
+    for (i = 0; i < N; i++) {
+       schedule(test, nextInterval, i);
+       nextInterval += 10;
+    }
 
-    schedule(test, 30.0, 0);
-    // for (i = 0; i < N; i++) {
-    //    schedule(test, 30.0, i);
-    //  } 
-    // falha no tempo 31 o processo 1
+    /*----- Escalona os falhas -----*/
     schedule(fault, 29.0, 1);
 
-    // recupera no tempo 61 o processo 1
+    /*----- Escalona os recuperação -----*/
     schedule(recovery, 170.0, 1);
     
-/*----- agora vem o loop principal do simulador -----*/
-
-    while (time() < 300.0) {
+    /*----- loop principal do simulador -----*/
+    while (time() < 470.0) {
       cause(&event, &token); 
       switch(event) {
        case test: 
@@ -90,10 +84,8 @@ int main (int argc, char *argv[]) {
 
             // Se status do processo testado for válido, imprime na tela o teste
             if (status(processo[processo[token].nextTest].id) == 0) {
-                printf("o processo %d testou o processo %d correto no tempo %5.1f\n", token, processo[token].nextTest, time());
+                printf("o processo %d testou o processo %d CORRETO no tempo %5.1f\n", token, processo[token].nextTest, time());
 
-                // escalona o próximo processo correto a testar e reseta nextTest para o padrão daquele nodo
-                schedule(test, 30.0, processo[token].nextTest);
                 processo[token].nextTest = (token + 1) % N;
             }
             // se não encontrou um processo correto, então continua testando
@@ -108,9 +100,9 @@ int main (int argc, char *argv[]) {
                     processo[token].nextTest = (processo[token].nextTest + 1) % N;
                 }
 
-                printf("O processo %d testou o processo %d incorreto no tempo %5.1f, o próximo processo a ser testado por %d será %d\n", token, time(), lastTested, token, processo[token].nextTest);
+                printf("O processo %d testou o processo %d INCORRETO no tempo %5.1f, o próximo processo a ser testado por %d será %d\n", token, time(), lastTested, token, processo[token].nextTest);
 
-                schedule(test, 30.0, token);
+                schedule(test, 10.0, token);
             }
             break;
        case fault:
@@ -119,12 +111,17 @@ int main (int argc, char *argv[]) {
                 puts("Não foi possível falhar o nodo...");
                 break;
             }
-            printf("o processo %d falhou no tempo %5.1f\n", token, time());
+            printf("o processo %d FALHOU no tempo %5.1f\n", token, time());
             break;
        case recovery:
             release(processo[token].id, token);
-            printf("o processo %d recuperou no tempo %5.1f\n", token, time());
-            //schedule(test, 30.0, token);
+            printf("\no processo %d RECUPEROU no tempo %5.1f\n", token, time());
+
+            nextInterval = time();
+            for (i = 0; i < N; i++) {
+                schedule(test, nextInterval, i);
+                nextInterval += 10;
+            }
             break;
       } /* end switch */
     } /* end while */
