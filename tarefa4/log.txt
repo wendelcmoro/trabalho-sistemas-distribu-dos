@@ -1,0 +1,190 @@
+Executando Tarefa-4
+
+Simulando vRing com 8 processos
+
+Vetores State iniciais dos processos: 
+Processo 0:  0 - - - - - - -
+Processo 1:  - 0 - - - - - -
+Processo 2:  - - 0 - - - - -
+Processo 3:  - - - 0 - - - -
+Processo 4:  - - - - 0 - - -
+Processo 5:  - - - - - 0 - -
+Processo 6:  - - - - - - 0 -
+Processo 7:  - - - - - - - 0
+
+o processo 1 FALHOU no tempo  29.0
+o processo 2 FALHOU no tempo  29.0
+o processo 3 FALHOU no tempo  29.0
+o processo 4 FALHOU no tempo  29.0
+o processo 5 FALHOU no tempo  29.0
+o processo 6 FALHOU no tempo  29.0
+o processo 7 FALHOU no tempo  29.0
+O processo 0 testou o processo 1 INCORRETO no tempo  30.0, o próximo processo a ser testado por 0 será 2
+O processo 0 testou o processo 2 INCORRETO no tempo  31.0, o próximo processo a ser testado por 0 será 3
+O processo 0 testou o processo 3 INCORRETO no tempo  32.0, o próximo processo a ser testado por 0 será 4
+O processo 0 testou o processo 4 INCORRETO no tempo  33.0, o próximo processo a ser testado por 0 será 5
+O processo 0 testou o processo 5 INCORRETO no tempo  34.0, o próximo processo a ser testado por 0 será 6
+O processo 0 testou o processo 6 INCORRETO no tempo  35.0, o próximo processo a ser testado por 0 será 7
+O processo 0 testou o processo 7 INCORRETO no tempo  36.0, todos os processos do Anel foram testados falhos
+
+
+Vetor State de cada processo: 
+Processo 0:  0 1 1 1 1 1 1 1
+Processo 1:  - 0 - - - - - -
+Processo 2:  - - 0 - - - - -
+Processo 3:  - - - 0 - - - -
+Processo 4:  - - - - 0 - - -
+Processo 5:  - - - - - 0 - -
+Processo 6:  - - - - - - 0 -
+Processo 7:  - - - - - - - 0
+
+
+o processo 1 RECUPEROU no tempo 119.0
+o processo 0 testou o processo 1 CORRETO no tempo 120.0
+O processo 1 testou o processo 2 INCORRETO no tempo 120.0, o próximo processo a ser testado por 1 será 3
+O processo 1 testou o processo 3 INCORRETO no tempo 121.0, o próximo processo a ser testado por 1 será 4
+O processo 1 testou o processo 4 INCORRETO no tempo 122.0, o próximo processo a ser testado por 1 será 5
+O processo 1 testou o processo 5 INCORRETO no tempo 123.0, o próximo processo a ser testado por 1 será 6
+O processo 1 testou o processo 6 INCORRETO no tempo 124.0, o próximo processo a ser testado por 1 será 7
+O processo 1 testou o processo 7 INCORRETO no tempo 125.0, o próximo processo a ser testado por 1 será 0
+o processo 1 testou o processo 0 CORRETO no tempo 126.0
+
+Vetor State de cada processo: 
+Processo 0:  0 2 - - - - - -
+Processo 1:  0 0 1 1 1 1 1 1
+Processo 2:  - - 0 - - - - -
+Processo 3:  - - - 0 - - - -
+Processo 4:  - - - - 0 - - -
+Processo 5:  - - - - - 0 - -
+Processo 6:  - - - - - - 0 -
+Processo 7:  - - - - - - - 0
+
+
+o processo 2 RECUPEROU no tempo 139.0
+o processo 0 testou o processo 1 CORRETO no tempo 140.0
+o processo 1 testou o processo 2 CORRETO no tempo 140.0
+O processo 2 testou o processo 3 INCORRETO no tempo 140.0, o próximo processo a ser testado por 2 será 4
+O processo 2 testou o processo 4 INCORRETO no tempo 141.0, o próximo processo a ser testado por 2 será 5
+O processo 2 testou o processo 5 INCORRETO no tempo 142.0, o próximo processo a ser testado por 2 será 6
+O processo 2 testou o processo 6 INCORRETO no tempo 143.0, o próximo processo a ser testado por 2 será 7
+O processo 2 testou o processo 7 INCORRETO no tempo 144.0, o próximo processo a ser testado por 2 será 0
+o processo 2 testou o processo 0 CORRETO no tempo 145.0
+
+Vetor State de cada processo: 
+Processo 0:  0 2 1 1 1 1 1 1
+Processo 1:  - 0 2 - - - - -
+Processo 2:  0 2 0 1 1 1 1 1
+Processo 3:  - - - 0 - - - -
+Processo 4:  - - - - 0 - - -
+Processo 5:  - - - - - 0 - -
+Processo 6:  - - - - - - 0 -
+Processo 7:  - - - - - - - 0
+
+
+o processo 3 RECUPEROU no tempo 159.0
+o processo 0 testou o processo 1 CORRETO no tempo 160.0
+o processo 1 testou o processo 2 CORRETO no tempo 160.0
+o processo 2 testou o processo 3 CORRETO no tempo 160.0
+O processo 3 testou o processo 4 INCORRETO no tempo 160.0, o próximo processo a ser testado por 3 será 5
+O processo 3 testou o processo 5 INCORRETO no tempo 161.0, o próximo processo a ser testado por 3 será 6
+O processo 3 testou o processo 6 INCORRETO no tempo 162.0, o próximo processo a ser testado por 3 será 7
+O processo 3 testou o processo 7 INCORRETO no tempo 163.0, o próximo processo a ser testado por 3 será 0
+o processo 3 testou o processo 0 CORRETO no tempo 164.0
+
+Vetor State de cada processo: 
+Processo 0:  0 2 2 - - - - -
+Processo 1:  0 0 2 1 1 1 1 1
+Processo 2:  - - 0 2 - - - -
+Processo 3:  0 2 2 0 1 1 1 1
+Processo 4:  - - - - 0 - - -
+Processo 5:  - - - - - 0 - -
+Processo 6:  - - - - - - 0 -
+Processo 7:  - - - - - - - 0
+
+
+o processo 4 RECUPEROU no tempo 179.0
+o processo 0 testou o processo 1 CORRETO no tempo 180.0
+o processo 1 testou o processo 2 CORRETO no tempo 180.0
+o processo 2 testou o processo 3 CORRETO no tempo 180.0
+o processo 3 testou o processo 4 CORRETO no tempo 180.0
+O processo 4 testou o processo 5 INCORRETO no tempo 180.0, o próximo processo a ser testado por 4 será 6
+O processo 4 testou o processo 6 INCORRETO no tempo 181.0, o próximo processo a ser testado por 4 será 7
+O processo 4 testou o processo 7 INCORRETO no tempo 182.0, o próximo processo a ser testado por 4 será 0
+o processo 4 testou o processo 0 CORRETO no tempo 183.0
+
+Vetor State de cada processo: 
+Processo 0:  0 2 2 1 1 1 1 1
+Processo 1:  - 0 2 2 - - - -
+Processo 2:  0 2 0 2 1 1 1 1
+Processo 3:  - - - 0 2 - - -
+Processo 4:  0 2 2 1 0 1 1 1
+Processo 5:  - - - - - 0 - -
+Processo 6:  - - - - - - 0 -
+Processo 7:  - - - - - - - 0
+
+
+o processo 5 RECUPEROU no tempo 199.0
+o processo 0 testou o processo 1 CORRETO no tempo 200.0
+o processo 1 testou o processo 2 CORRETO no tempo 200.0
+o processo 2 testou o processo 3 CORRETO no tempo 200.0
+o processo 3 testou o processo 4 CORRETO no tempo 200.0
+o processo 4 testou o processo 5 CORRETO no tempo 200.0
+O processo 5 testou o processo 6 INCORRETO no tempo 200.0, o próximo processo a ser testado por 5 será 7
+O processo 5 testou o processo 7 INCORRETO no tempo 201.0, o próximo processo a ser testado por 5 será 0
+o processo 5 testou o processo 0 CORRETO no tempo 202.0
+
+Vetor State de cada processo: 
+Processo 0:  0 2 2 2 - - - -
+Processo 1:  0 0 2 2 1 1 1 1
+Processo 2:  - - 0 2 2 - - -
+Processo 3:  0 2 2 0 2 1 1 1
+Processo 4:  - - - - 0 2 - -
+Processo 5:  0 2 2 2 - 0 1 1
+Processo 6:  - - - - - - 0 -
+Processo 7:  - - - - - - - 0
+
+
+o processo 6 RECUPEROU no tempo 219.0
+o processo 0 testou o processo 1 CORRETO no tempo 220.0
+o processo 1 testou o processo 2 CORRETO no tempo 220.0
+o processo 2 testou o processo 3 CORRETO no tempo 220.0
+o processo 3 testou o processo 4 CORRETO no tempo 220.0
+o processo 4 testou o processo 5 CORRETO no tempo 220.0
+o processo 5 testou o processo 6 CORRETO no tempo 220.0
+O processo 6 testou o processo 7 INCORRETO no tempo 220.0, o próximo processo a ser testado por 6 será 0
+o processo 6 testou o processo 0 CORRETO no tempo 221.0
+
+Vetor State de cada processo: 
+Processo 0:  0 2 2 2 1 1 1 1
+Processo 1:  - 0 2 2 2 - - -
+Processo 2:  0 2 0 2 2 1 1 1
+Processo 3:  - - - 0 2 2 - -
+Processo 4:  0 2 2 2 0 2 1 1
+Processo 5:  - - - - - 0 2 -
+Processo 6:  0 2 2 2 1 1 0 1
+Processo 7:  - - - - - - - 0
+
+
+o processo 7 RECUPEROU no tempo 239.0
+o processo 0 testou o processo 1 CORRETO no tempo 240.0
+o processo 1 testou o processo 2 CORRETO no tempo 240.0
+o processo 2 testou o processo 3 CORRETO no tempo 240.0
+o processo 3 testou o processo 4 CORRETO no tempo 240.0
+o processo 4 testou o processo 5 CORRETO no tempo 240.0
+o processo 5 testou o processo 6 CORRETO no tempo 240.0
+o processo 6 testou o processo 7 CORRETO no tempo 240.0
+o processo 7 testou o processo 0 CORRETO no tempo 240.0
+
+Vetor State de cada processo: 
+Processo 0:  0 2 2 2 2 - - -
+Processo 1:  0 0 2 2 2 1 1 1
+Processo 2:  - - 0 2 2 2 - -
+Processo 3:  0 2 2 0 2 2 1 1
+Processo 4:  - - - - 0 2 2 -
+Processo 5:  0 2 2 2 1 0 2 1
+Processo 6:  - - - - - - 0 2
+Processo 7:  0 2 2 2 2 - - 0
+
+
+**** Simulation Error at Time 240.000
+     Empty Event List

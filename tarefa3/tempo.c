@@ -1,5 +1,5 @@
 /* Disciplina Sistemas Distribuídos 
-   Data da Última Modificação: 14/01/2022
+   Data da Última Modificação: 25/01/2022
    Aluno Wendel Caio Moro
    Tarefa 3
 */
@@ -59,6 +59,7 @@ int main (int argc, char *argv[]) {
     stream(1);
  
     /*----- inicializacao -----*/
+    printf("Executando Tarefa-3\n\n");
     printf("Simulando vRing com %d processos\n\n", N);
     processo = (TipoProcesso *) malloc(sizeof(TipoProcesso)*N);
     printf("Vetores State iniciais dos processos: \n");    
@@ -149,7 +150,7 @@ int main (int argc, char *argv[]) {
                         processo[token].state[lastTested]++;
                     }
 
-                    if (processo[token].state[processo[lastTested].nextTest] == -1) {
+                    if (processo[token].state[lastTested] == -1) {
                         processo[token].state[lastTested] = 1;
                     }
                     
@@ -177,7 +178,7 @@ int main (int argc, char *argv[]) {
                 }
 
                 if (showStates) {
-                    printf("\nState de cada processo: \n");
+                    printf("\nVetor State de cada processo: \n");
                     for (i = 0; i < N; i++) {
                         printf("Processo %d: ", i);
                         for (int j = 0; j < N; j++) {

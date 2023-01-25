@@ -48,6 +48,7 @@ int main (int argc, char *argv[]) {
     stream(1);
  
     /*----- inicializacao -----*/
+    printf("Executando Tarefa-1\n\n");
     printf("Simulando vRing com %d processos\n\n", N);
     processo = (TipoProcesso *) malloc(sizeof(TipoProcesso)*N);
     for (int i = 0; i < N; i++) {
