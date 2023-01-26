@@ -1,0 +1,31 @@
+
+
+--> Número de clusters: 2
+--> Número de processos: 4
+
+Processo 0
+[Tempo:  30.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  30.0] O processo 0 testou o processo 2 CORRETO  
+
+Processo 1
+[Tempo:  30.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  30.0] O processo 1 testou o processo 3 CORRETO  
+
+Processo 2
+[Tempo:  30.0] O processo 2 testou o processo 3 CORRETO  
+[Tempo:  30.0] O processo 2 testou o processo 0 CORRETO  
+
+Processo 3
+[Tempo:  30.0] O processo 3 testou o processo 2 CORRETO  
+[Tempo:  30.0] O processo 3 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 1:
+Processo  0: [ 0 0 0 - ]
+Processo  1: [ 0 0 0 0 ]
+Processo  2: [ 0 0 0 0 ]
+Processo  3: [ 0 0 0 0 ]
+Número de testes executado até o momento: 8
+
+
+**** Simulation Error at Time 30.000
+     Empty Event List

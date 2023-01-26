@@ -1,0 +1,64 @@
+
+
+--> Número de clusters: 3
+--> Número de processos: 8
+
+EVENTO:
+[Tempo:  20.0] O processo 4 FALHOU
+
+Processo 0
+[Tempo:  30.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  30.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  30.0] O processo 0 testou o processo 4 INCORRETO 
+
+Processo 1
+[Tempo:  30.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  30.0] O processo 1 testou o processo 3 CORRETO  
+[Tempo:  30.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  30.0] O processo 2 testou o processo 3 CORRETO  
+[Tempo:  30.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  30.0] O processo 2 testou o processo 6 CORRETO  
+
+Processo 3
+[Tempo:  30.0] O processo 3 testou o processo 2 CORRETO  
+[Tempo:  30.0] O processo 3 testou o processo 1 CORRETO  
+[Tempo:  30.0] O processo 3 testou o processo 7 CORRETO  
+
+Processo 4
+[Tempo:  30.0] ESTOU FALHO! 
+
+Processo 5
+[Tempo:  30.0] O processo 5 testou o processo 4 INCORRETO 
+[Tempo:  30.0] O processo 5 testou o processo 7 CORRETO  
+[Tempo:  30.0] O processo 5 testou o processo 6 CORRETO  
+[Tempo:  30.0] O processo 5 testou o processo 1 CORRETO  
+[Tempo:  30.0] O processo 5 testou o processo 0 CORRETO  
+
+Processo 6
+[Tempo:  30.0] O processo 6 testou o processo 7 CORRETO  
+[Tempo:  30.0] O processo 6 testou o processo 4 INCORRETO 
+[Tempo:  30.0] O processo 6 testou o processo 2 CORRETO  
+
+Processo 7
+[Tempo:  30.0] O processo 7 testou o processo 6 CORRETO  
+[Tempo:  30.0] O processo 7 testou o processo 5 CORRETO  
+[Tempo:  30.0] O processo 7 testou o processo 3 CORRETO  
+
+Latência do último evento: 1
+
+Vetor states na rodada de testes 1:
+Processo  0: [ 0 0 0 - 1 - - - ]
+Processo  1: [ 0 0 0 0 1 0 - - ]
+Processo  2: [ 0 0 0 0 1 - 0 - ]
+Processo  3: [ 0 0 0 0 1 0 0 0 ]
+Processo  4: [ - - - - - - - - ]
+Processo  5: [ 0 0 0 0 1 0 0 0 ]
+Processo  6: [ 0 0 0 0 1 - 0 0 ]
+Processo  7: [ 0 0 0 0 1 0 0 0 ]
+Número de testes executado até o momento: 23
+
+
+**** Simulation Error at Time 30.000
+     Empty Event List

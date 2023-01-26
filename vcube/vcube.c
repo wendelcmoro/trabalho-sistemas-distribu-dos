@@ -59,6 +59,7 @@ typedef struct
 
 TipoProcesso *processo;
 
+// Imprime o vetor STATE de todos os processos
 void printStates(int N)
 {
     int i;
@@ -69,7 +70,7 @@ void printStates(int N)
     {
         max_intervals--;
         for (i = 0; i < N; i++)
-            schedule(test, time() + 30, i);
+            schedule(test, 2, i);
     }
     printf(ANSI_COLOR_CYAN "Vetor states na rodada de testes %d:\n" ANSI_COLOR_RESET, current_round);
     for (i = 0; i < N; i++)
@@ -89,6 +90,7 @@ void printStates(int N)
     current_round++;
 }
 
+// Verifica se o ultimo evento foi detectado por todos e retorna true/false
 int verifyLatency(int N)
 {
     int verify_latency = 1;
@@ -112,20 +114,33 @@ int verifyLatency(int N)
             rand_process = rand() % N;
 
             if (total_faults > 0)
-                schedule(fault, time() + 20, rand_process);
-
+                for (int k = 0; k < N; k++)
+                {
+                    if (global_state[rand_process] % 2 == 1)
+                        rand_process = (rand_process + 1) % N;
+                    else
+                    {
+                        schedule(fault, 1, rand_process);
+                        break;
+                    }
+                }
             else if (total_recovery > 0)
-            {
-                // remover da pilha o token e colocar para recovery
-                schedule(recovery, time() + 20, pilha->top->value);
-                pop(pilha);
-            }
+                for (int k = 0; k < N; k++)
+                {
+                    if (global_state[rand_process] % 2 == 0)
+                        rand_process = (rand_process + 1) % N;
+                    else
+                    {
+                        schedule(recovery, 1, pilha->top->value);
+                        pop(pilha);
+                        break;
+                    }
+                }
         }
     }
     else
         verify_latency = 0;
 
-    // printf("eventos %d\n\n\n\n\n\n", events);
     return verify_latency;
 }
 
@@ -185,7 +200,9 @@ int main(int argc, char *argv[])
 
     /*----- Escalonando eventos de teste para o inicio da simulaçao -----*/
     for (i = 0; i < N; i++)
+    {
         schedule(test, 30.0, i);
+    }
     /*------------------------------------------------------------------*/
 
     /*----- Escalonando o primeiro evento de falha (caso exista) -------------------------------*/
@@ -278,6 +295,10 @@ int main(int argc, char *argv[])
 
                         set_free(nodes);
                         nodes = cis(alvo, s);
+
+                        // Não testar processos que não existem
+                        if (alvo >= N)
+                            continue;
 
                         for (int m = 0; m < nodes->size; m++)
                         {

@@ -1,0 +1,83 @@
+
+
+--> Número de clusters: 3
+--> Número de processos: 6
+
+EVENTO:
+[Tempo:  20.0] O processo 3 FALHOU
+
+Processo 0
+[Tempo:  30.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  30.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  30.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  30.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  30.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  30.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  30.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  30.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  30.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  30.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  30.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  30.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  30.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  30.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 1:
+Processo  0: [ 0 0 0 - 0 - ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 0 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 0 0 - 0 0 ]
+Processo  5: [ 0 0 0 1 0 0 ]
+Número de testes executado até o momento: 13
+
+Processo 0
+[Tempo:  32.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  32.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  32.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  32.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  32.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  32.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  32.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  32.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  32.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  32.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  32.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  32.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  32.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  32.0] O processo 5 testou o processo 1 CORRETO  
+
+Latência do último evento: 2
+
+Vetor states na rodada de testes 2:
+Processo  0: [ 0 0 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 0 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 0 0 1 0 0 ]
+Processo  5: [ 0 0 0 1 0 0 ]
+Número de testes executado até o momento: 26
+
+
+**** Simulation Error at Time 32.000
+     Empty Event List

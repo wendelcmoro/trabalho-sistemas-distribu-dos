@@ -1,0 +1,1811 @@
+
+
+--> Número de clusters: 3
+--> Número de processos: 6
+
+EVENTO:
+[Tempo:  20.0] O processo 3 FALHOU
+
+Processo 0
+[Tempo:  30.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  30.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  30.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  30.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  30.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  30.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  30.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  30.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  30.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  30.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  30.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  30.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  30.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  30.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 1:
+Processo  0: [ 0 0 0 - 0 - ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 0 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 0 0 - 0 0 ]
+Processo  5: [ 0 0 0 1 0 0 ]
+Número de testes executado até o momento: 13
+
+Processo 0
+[Tempo:  32.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  32.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  32.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  32.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  32.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  32.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  32.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  32.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  32.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  32.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  32.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  32.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  32.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  32.0] O processo 5 testou o processo 1 CORRETO  
+
+Latência do último evento: 2
+
+Vetor states na rodada de testes 2:
+Processo  0: [ 0 0 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 0 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 0 0 1 0 0 ]
+Processo  5: [ 0 0 0 1 0 0 ]
+Número de testes executado até o momento: 26
+
+EVENTO:
+[Tempo:  33.0] O processo 1 FALHOU
+
+Processo 0
+[Tempo:  34.0] O processo 0 testou o processo 1 INCORRETO 
+[Tempo:  34.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  34.0] O processo 0 testou o processo 3 INCORRETO 
+[Tempo:  34.0] O processo 0 testou o processo 4 CORRETO  
+[Tempo:  34.0] O processo 0 testou o processo 5 CORRETO  
+
+Processo 1
+[Tempo:  34.0] ESTOU FALHO! 
+
+Processo 2
+[Tempo:  34.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  34.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  34.0] O processo 2 testou o processo 1 INCORRETO 
+
+Processo 3
+[Tempo:  34.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  34.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  34.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  34.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  34.0] O processo 5 testou o processo 1 INCORRETO 
+
+Latência do último evento: 1
+
+Vetor states na rodada de testes 3:
+Processo  0: [ 0 1 0 1 0 0 ]
+Processo  1: [ - - - - - - ]
+Processo  2: [ 0 1 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 1 0 1 0 0 ]
+Processo  5: [ 0 1 0 1 0 0 ]
+Número de testes executado até o momento: 38
+
+EVENTO:
+[Tempo:  35.0] O processo 1 RECUPEROU
+
+Processo 0
+[Tempo:  36.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  36.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  36.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  36.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  36.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  36.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  36.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  36.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  36.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  36.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  36.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  36.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  36.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  36.0] O processo 5 testou o processo 1 CORRETO  
+
+Latência do último evento: 1
+
+Vetor states na rodada de testes 4:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 51
+
+EVENTO:
+[Tempo:  37.0] O processo 0 RECUPEROU
+
+Processo 0
+[Tempo:  38.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  38.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  38.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  38.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  38.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  38.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  38.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  38.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  38.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  38.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  38.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  38.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  38.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  38.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 5:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 64
+
+Processo 0
+[Tempo:  40.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  40.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  40.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  40.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  40.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  40.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  40.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  40.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  40.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  40.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  40.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  40.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  40.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  40.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 6:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 77
+
+Processo 0
+[Tempo:  42.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  42.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  42.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  42.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  42.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  42.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  42.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  42.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  42.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  42.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  42.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  42.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  42.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  42.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 7:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 90
+
+Processo 0
+[Tempo:  44.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  44.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  44.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  44.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  44.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  44.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  44.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  44.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  44.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  44.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  44.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  44.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  44.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  44.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 8:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 103
+
+Processo 0
+[Tempo:  46.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  46.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  46.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  46.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  46.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  46.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  46.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  46.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  46.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  46.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  46.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  46.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  46.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  46.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 9:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 116
+
+Processo 0
+[Tempo:  48.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  48.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  48.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  48.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  48.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  48.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  48.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  48.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  48.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  48.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  48.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  48.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  48.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  48.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 10:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 129
+
+Processo 0
+[Tempo:  50.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  50.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  50.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  50.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  50.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  50.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  50.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  50.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  50.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  50.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  50.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  50.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  50.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  50.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 11:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 142
+
+Processo 0
+[Tempo:  52.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  52.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  52.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  52.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  52.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  52.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  52.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  52.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  52.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  52.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  52.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  52.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  52.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  52.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 12:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 155
+
+Processo 0
+[Tempo:  54.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  54.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  54.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  54.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  54.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  54.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  54.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  54.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  54.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  54.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  54.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  54.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  54.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  54.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 13:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 168
+
+Processo 0
+[Tempo:  56.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  56.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  56.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  56.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  56.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  56.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  56.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  56.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  56.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  56.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  56.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  56.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  56.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  56.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 14:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 181
+
+Processo 0
+[Tempo:  58.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  58.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  58.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  58.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  58.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  58.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  58.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  58.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  58.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  58.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  58.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  58.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  58.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  58.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 15:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 194
+
+Processo 0
+[Tempo:  60.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  60.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  60.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  60.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  60.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  60.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  60.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  60.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  60.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  60.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  60.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  60.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  60.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  60.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 16:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 207
+
+Processo 0
+[Tempo:  62.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  62.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  62.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  62.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  62.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  62.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  62.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  62.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  62.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  62.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  62.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  62.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  62.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  62.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 17:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 220
+
+Processo 0
+[Tempo:  64.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  64.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  64.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  64.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  64.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  64.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  64.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  64.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  64.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  64.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  64.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  64.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  64.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  64.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 18:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 233
+
+Processo 0
+[Tempo:  66.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  66.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  66.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  66.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  66.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  66.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  66.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  66.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  66.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  66.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  66.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  66.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  66.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  66.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 19:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 246
+
+Processo 0
+[Tempo:  68.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  68.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  68.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  68.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  68.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  68.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  68.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  68.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  68.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  68.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  68.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  68.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  68.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  68.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 20:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 259
+
+Processo 0
+[Tempo:  70.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  70.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  70.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  70.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  70.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  70.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  70.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  70.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  70.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  70.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  70.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  70.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  70.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  70.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 21:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 272
+
+Processo 0
+[Tempo:  72.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  72.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  72.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  72.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  72.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  72.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  72.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  72.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  72.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  72.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  72.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  72.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  72.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  72.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 22:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 285
+
+Processo 0
+[Tempo:  74.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  74.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  74.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  74.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  74.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  74.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  74.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  74.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  74.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  74.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  74.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  74.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  74.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  74.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 23:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 298
+
+Processo 0
+[Tempo:  76.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  76.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  76.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  76.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  76.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  76.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  76.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  76.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  76.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  76.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  76.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  76.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  76.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  76.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 24:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 311
+
+Processo 0
+[Tempo:  78.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  78.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  78.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  78.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  78.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  78.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  78.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  78.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  78.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  78.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  78.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  78.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  78.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  78.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 25:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 324
+
+Processo 0
+[Tempo:  80.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  80.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  80.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  80.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  80.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  80.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  80.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  80.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  80.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  80.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  80.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  80.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  80.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  80.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 26:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 337
+
+Processo 0
+[Tempo:  82.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  82.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  82.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  82.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  82.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  82.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  82.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  82.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  82.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  82.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  82.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  82.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  82.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  82.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 27:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 350
+
+Processo 0
+[Tempo:  84.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  84.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  84.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  84.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  84.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  84.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  84.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  84.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  84.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  84.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  84.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  84.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  84.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  84.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 28:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 363
+
+Processo 0
+[Tempo:  86.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  86.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  86.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  86.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  86.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  86.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  86.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  86.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  86.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  86.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  86.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  86.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  86.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  86.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 29:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 376
+
+Processo 0
+[Tempo:  88.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  88.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  88.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  88.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  88.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  88.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  88.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  88.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  88.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  88.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  88.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  88.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  88.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  88.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 30:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 389
+
+Processo 0
+[Tempo:  90.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  90.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  90.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  90.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  90.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  90.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  90.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  90.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  90.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  90.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  90.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  90.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  90.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  90.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 31:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 402
+
+Processo 0
+[Tempo:  92.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  92.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  92.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  92.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  92.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  92.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  92.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  92.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  92.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  92.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  92.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  92.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  92.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  92.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 32:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 415
+
+Processo 0
+[Tempo:  94.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  94.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  94.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  94.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  94.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  94.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  94.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  94.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  94.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  94.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  94.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  94.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  94.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  94.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 33:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 428
+
+Processo 0
+[Tempo:  96.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  96.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  96.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  96.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  96.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  96.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  96.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  96.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  96.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  96.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  96.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  96.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  96.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  96.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 34:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 441
+
+Processo 0
+[Tempo:  98.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo:  98.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo:  98.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo:  98.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo:  98.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo:  98.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo:  98.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo:  98.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo:  98.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo:  98.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo:  98.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo:  98.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo:  98.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo:  98.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 35:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 454
+
+Processo 0
+[Tempo: 100.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 100.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 100.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 100.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 100.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 100.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 100.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 100.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 100.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 100.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 100.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 100.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 100.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 100.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 36:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 467
+
+Processo 0
+[Tempo: 102.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 102.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 102.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 102.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 102.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 102.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 102.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 102.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 102.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 102.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 102.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 102.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 102.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 102.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 37:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 480
+
+Processo 0
+[Tempo: 104.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 104.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 104.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 104.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 104.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 104.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 104.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 104.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 104.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 104.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 104.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 104.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 104.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 104.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 38:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 493
+
+Processo 0
+[Tempo: 106.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 106.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 106.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 106.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 106.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 106.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 106.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 106.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 106.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 106.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 106.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 106.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 106.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 106.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 39:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 506
+
+Processo 0
+[Tempo: 108.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 108.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 108.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 108.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 108.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 108.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 108.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 108.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 108.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 108.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 108.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 108.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 108.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 108.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 40:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 519
+
+Processo 0
+[Tempo: 110.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 110.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 110.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 110.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 110.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 110.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 110.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 110.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 110.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 110.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 110.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 110.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 110.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 110.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 41:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 532
+
+Processo 0
+[Tempo: 112.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 112.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 112.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 112.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 112.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 112.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 112.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 112.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 112.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 112.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 112.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 112.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 112.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 112.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 42:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 545
+
+Processo 0
+[Tempo: 114.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 114.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 114.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 114.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 114.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 114.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 114.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 114.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 114.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 114.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 114.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 114.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 114.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 114.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 43:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 558
+
+Processo 0
+[Tempo: 116.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 116.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 116.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 116.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 116.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 116.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 116.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 116.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 116.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 116.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 116.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 116.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 116.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 116.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 44:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 571
+
+Processo 0
+[Tempo: 118.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 118.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 118.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 118.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 118.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 118.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 118.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 118.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 118.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 118.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 118.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 118.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 118.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 118.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 45:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 584
+
+Processo 0
+[Tempo: 120.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 120.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 120.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 120.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 120.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 120.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 120.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 120.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 120.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 120.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 120.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 120.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 120.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 120.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 46:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 597
+
+Processo 0
+[Tempo: 122.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 122.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 122.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 122.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 122.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 122.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 122.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 122.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 122.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 122.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 122.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 122.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 122.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 122.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 47:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 610
+
+Processo 0
+[Tempo: 124.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 124.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 124.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 124.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 124.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 124.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 124.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 124.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 124.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 124.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 124.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 124.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 124.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 124.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 48:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 623
+
+Processo 0
+[Tempo: 126.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 126.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 126.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 126.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 126.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 126.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 126.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 126.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 126.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 126.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 126.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 126.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 126.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 126.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 49:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 636
+
+Processo 0
+[Tempo: 128.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 128.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 128.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 128.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 128.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 128.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 128.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 128.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 128.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 128.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 128.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 128.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 128.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 128.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 50:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 649
+
+Processo 0
+[Tempo: 130.0] O processo 0 testou o processo 1 CORRETO  
+[Tempo: 130.0] O processo 0 testou o processo 2 CORRETO  
+[Tempo: 130.0] O processo 0 testou o processo 4 CORRETO  
+
+Processo 1
+[Tempo: 130.0] O processo 1 testou o processo 0 CORRETO  
+[Tempo: 130.0] O processo 1 testou o processo 3 INCORRETO 
+[Tempo: 130.0] O processo 1 testou o processo 5 CORRETO  
+
+Processo 2
+[Tempo: 130.0] O processo 2 testou o processo 3 INCORRETO 
+[Tempo: 130.0] O processo 2 testou o processo 0 CORRETO  
+[Tempo: 130.0] O processo 2 testou o processo 1 CORRETO  
+
+Processo 3
+[Tempo: 130.0] ESTOU FALHO! 
+
+Processo 4
+[Tempo: 130.0] O processo 4 testou o processo 5 CORRETO  
+[Tempo: 130.0] O processo 4 testou o processo 0 CORRETO  
+
+Processo 5
+[Tempo: 130.0] O processo 5 testou o processo 4 CORRETO  
+[Tempo: 130.0] O processo 5 testou o processo 1 CORRETO  
+
+Vetor states na rodada de testes 51:
+Processo  0: [ 0 2 0 1 0 0 ]
+Processo  1: [ 0 0 0 1 0 0 ]
+Processo  2: [ 0 2 0 1 0 0 ]
+Processo  3: [ - - - - - - ]
+Processo  4: [ 0 2 0 1 0 0 ]
+Processo  5: [ 0 2 0 1 0 0 ]
+Número de testes executado até o momento: 662
+
+
+**** Simulation Error at Time 130.000
+     Empty Event List
