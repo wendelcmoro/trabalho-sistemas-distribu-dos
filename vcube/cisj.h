@@ -1,6 +1,12 @@
 #ifndef _cisj_
 #define _cisj_
 
+/* --------------------------------------------------------------------------------------
+   Disciplina Sistemas Distribuídos
+   Objetivo: Header da função cis, para poder ser incluída no programa principal do vCube
+   Data da ultima atualizacao: 25/01/2023
+----------------------------------------------------------------------------------------*/
+
 #define POW_2(num) (1<<(num))
 #define VALID_J(j, s) ((POW_2(s-1)) >= j)
 

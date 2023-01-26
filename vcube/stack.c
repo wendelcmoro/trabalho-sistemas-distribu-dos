@@ -2,6 +2,14 @@
 #include <stdlib.h>
 #include "stack.h"
 
+/* --------------------------------------------------------------------------------------
+   Disciplina Sistemas Distribuídos
+   Objetivo: API de Pilha utilizando Alocação Dinâmica para utilização no algoritmo do vCube
+   Autores: Wendel Caiu Moro e Bruno Augusto Luvizott
+   Data da ultima atualizacao: 25/01/2023
+----------------------------------------------------------------------------------------*/
+
+/* Inicializa a Pilha */
 stack *declareStack() {
     stack *stack = malloc(sizeof(stack));
 
@@ -11,6 +19,7 @@ stack *declareStack() {
     return stack;
 }
 
+/* Inclui um elemento nodo na pilha */
 void push(stack *stack, node *new) {
 
     if (stack->bottom == NULL) {
@@ -30,6 +39,7 @@ void push(stack *stack, node *new) {
     return;
 }
 
+/* remove o elemento do topo da pilha */
 void pop(stack *stack) {
     node* toRemove = stack->top;
 
