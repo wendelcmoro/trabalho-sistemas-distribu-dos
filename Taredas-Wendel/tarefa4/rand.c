@@ -9,8 +9,6 @@
 /**********************************************************************/
 
 #include <math.h>
-
-
 typedef double real;
 
 #define then
@@ -24,7 +22,6 @@ static long In[16]= {0L,   /* seeds for streams 1 thru 15  */
   1124933064L, 1223960546L, 1878892440L, 1449793615L,  553303732L};
 
 static int strm=1;         /* index of current stream */
-
 
 /*-------------  UNIFORM [0, 1] RANDOM NUMBER GENERATOR  -------------*/
 /*                                                                    */
@@ -50,7 +47,7 @@ real ranf()
   }
 
 /*--------------------  SELECT GENERATOR STREAM  ---------------------*/
-int stream(n)
+stream(n)
   int n;
     { /* set stream for 1<=n<=15, return stream for n=0 */
       if ((n<0)||(n>15)) then error(0,"stream Argument Error");
@@ -98,7 +95,7 @@ real uniform(a,b)
     }
 
 /*--------------------  RANDOM INTEGER GENERATOR  --------------------*/
-int random(i,n)
+random(i,n)
   int i,n;
     { /* 'random' returns an integer equiprobably selected from the   */
       /* set of integers i, i+1, i+2, . . , n.                        */
@@ -157,3 +154,4 @@ real normal(x,s)
           }
       return(x+z1*s);
   }
+
