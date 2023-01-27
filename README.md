@@ -5,7 +5,7 @@ O trabalho foi escrito em **C**, utilizando como base o arquivo **tempo.c** disp
 ## Alunos
 
 * Wendel Caio Moro (GRR20182641 wcm18)
-* Bruno Augusto Luvizott (GRRxxxxxxxx balxx)
+* Bruno Augusto Luvizott (GRR20180112 bal18)
 
 ## Arquivos
 
@@ -13,7 +13,9 @@ O trabalho foi escrito em **C**, utilizando como base o arquivo **tempo.c** disp
 
 Arquivo principal do trabalho. O programa executa uma simulação do vcube, indicando em seu início a quantidade de processos e a quantidade de clusters. O programa espera como entrada o **número de processos**, o número **máximo de intervalos**, a **quantidade de falhas** a serem agendadas e a **quantidade de recuperações** a serem agendadas. Os números de falhas são feitos a partir da função **rand()**, então processos aleatórios devem ser agendados para falharem.
 
-Arquivo: 
+A entrada **máximo de intervalos** limita quantos intervalos de testes por processo serão executados caso ainda não seja detectado o último evento.
+
+Arquivo:
 
 ```vcube.c.txt(link aqui)
 ```
@@ -26,9 +28,9 @@ o programa pode ser executado da seguinte maneira:
 
 ### stack.c
 
-Criamos uma biblioteca de pilha, a biblioteca a princípio é para para nos auxiliar ao agendar recuperações de processos, para poder apenas agendar recuperações de processos que tenham realmente falhado e garantir que não agendemos eventos de recuperaçõs em processos que já estão corretos ou já se recuperaram. A biblioteca contém um cabeçalho **stack.h** para poder ser utilizado no programa principal.
+Criamos uma biblioteca de pilha, a biblioteca a princípio é para para nos auxiliar ao agendar recuperações de processos, para poder apenas agendar recuperações de processos que tenham realmente falhado e garantir que não seja agendado eventos de recuperaçõs em processos que já estão corretos ou já se recuperaram. A biblioteca contém um cabeçalho **stack.h** para poder ser utilizado no programa principal.
 
-Arquivo: 
+Arquivo:
 
 ```
 stack.c.txt(link aqui)
@@ -39,7 +41,7 @@ stack.h.txt(link aqui)
 
 Arquivo que calcula a função **c(i,s)** do vCube. O arquivo em si é idêntico ao que nos foi disponibilizado, porém retiramos a função **main()**  e incluímos um arquivo de cabeçalho **cisj.h** para poder ser utilizado no programa principal.
 
-Arquivo: 
+Arquivo:
 
 ```
 cisj.c.txt(link aqui)
@@ -50,7 +52,7 @@ cisj.h.txt(link aqui)
 
 Arquivo de biblioteca de simulação que nos foi disponibilizado. O arquivo em si não teve alterações do original, e vem acompanhado de um cabeçalho **simpl.h**.
 
-Arquivo: 
+Arquivo:
 
 ```
 simpl.c.txt(link aqui)
@@ -61,7 +63,7 @@ simpl.h.txt(link aqui)
 
 Biblioteca de geração de valores aleatórios que nos foi disponibilizado, a princípio não utilizamos, mas mesmo assim está incluso na compilação do makefile.
 
-Arquivo: 
+Arquivo:
 
 ```rand.c.txt(link aqui)
 ```
@@ -70,7 +72,7 @@ Arquivo:
 
 Arquivo para compilação do nosso programa principal. Gera o executável **vcube**.
 
-Arquivo: 
+Arquivo:
 
 ```makefile.txt(link aqui)
 ```
