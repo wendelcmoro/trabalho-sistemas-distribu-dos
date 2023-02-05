@@ -37,17 +37,17 @@
 #define test 1
 #define fault 2
 #define recovery 3
+#define PROBABILITY 20 // Probabilidade de falha
 
 int detectNextRound = 0; // Verifica se a rodada acabou
 int max_intervals;       // define um limite máximo de intervalos caso o sistemas ainda não tenha concluido a latencia de todos os eventos
 int total_faults;
-int total_recovery = 0;
 int events;
 int current_round = 1;
 int tests;
 stack *pilha;
 int *global_state;
-int rand_process = 0;
+int process_selected = 0;
 
 /*---- declaramos agora o TipoProcesso ----*/
 typedef struct
@@ -60,16 +60,12 @@ typedef struct
 
 TipoProcesso *processo;
 
-void scheduleFault(TipoProcesso *processo, int token, int N, int suspeita)
+void scheduleFault(int token, int N, int suspeita)
 {
     request(processo[token].id, token, 0);
     total_faults--;
     global_state[token]++;
     events++;
-    // Adiciona na pilha o token
-    node *node = malloc(sizeof(node));
-    node->value = rand_process;
-    push(pilha, node);
     if (suspeita == -1)
     {
         printf(ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n");
@@ -83,8 +79,14 @@ void scheduleFault(TipoProcesso *processo, int token, int N, int suspeita)
 
 int next_random()
 {
-    return rand() % 11;
+    return rand() % 100;
 }
+
+int rand_process(int N)
+{
+    return rand() % N;
+}
+
 // Imprime o vetor STATE de todos os processos
 void printStates(int N)
 {
@@ -114,6 +116,71 @@ void printStates(int N)
     }
     printf("Número de testes executado até o momento: %d\n\n", tests);
     current_round++;
+
+    // Print de módulos detectados
+    node *aux = malloc(sizeof(node));
+
+    int *aux2 = malloc(sizeof(int) * N);
+    for (int i = 0; i < N; i++)
+        aux2[i] = global_state[i];
+
+    int count = 0;
+
+    for (int i = 0; i < N; i++)
+    {
+        if (aux2[i] % 2 == 1 || aux2[i] == -1)
+            continue;
+
+        printf("Modulo: [ %2d",i);
+        count = 1;
+        for (int j = 0; j < N; j++)
+        {
+            if (processo[i].state[j] % 2 == 0 && aux2[j] != -1 && j != i && aux2[j] % 2 == 0)
+            {
+                if (count == 0)
+                    printf(" %2d", j);
+                else
+                    printf(" , %2d", j);
+
+                aux2[j] = -1;
+
+                // empilha
+                aux = malloc(sizeof(node));
+                aux->value = j;
+                push(pilha, aux);
+
+                count++;
+            }
+        }
+
+        while (pilha->bottom != NULL)
+        {
+
+            aux = pilha->top;
+
+            for (int j = 0; j < N; j++)
+            {
+                if (processo[aux->value].state[j] % 2 == 0 && aux2[j] != -1 && aux2[j] % 2 == 0 && j != i)
+                {
+                    if (count == 0)
+                        printf(" %2d", j);
+                    else
+                        printf(", %2d", j);
+
+                    count++;
+
+                    aux2[j] = -1;
+                }
+            }
+
+            pop(pilha);
+        }
+
+        printf(" ]\n");
+        aux2[i] = -1;
+    }
+
+    free(aux2);
 }
 
 // Verifica se o ultimo evento foi detectado por todos e retorna true/false
@@ -137,28 +204,16 @@ int verifyLatency(int N)
         if (verify_latency == 1)
         {
             events--;
-            rand_process = rand() % N;
+            process_selected = rand_process(N);
 
             if (total_faults > 0)
                 for (int k = 0; k < N; k++)
                 {
-                    if (global_state[rand_process] % 2 == 1)
-                        rand_process = (rand_process + 1) % N;
+                    if (global_state[process_selected] % 2 == 1)
+                        process_selected = (process_selected + 1) % N;
                     else
                     {
-                        schedule(fault, 1, rand_process);
-                        break;
-                    }
-                }
-            else if (total_recovery > 0)
-                for (int k = 0; k < N; k++)
-                {
-                    if (global_state[rand_process] % 2 == 0)
-                        rand_process = (rand_process + 1) % N;
-                    else
-                    {
-                        schedule(recovery, 1, pilha->top->value);
-                        pop(pilha);
+                        schedule(fault, 1, process_selected);
                         break;
                     }
                 }
@@ -172,7 +227,6 @@ int verifyLatency(int N)
 
 int main(int argc, char *argv[])
 {
-
     pilha = declareStack();
 
     static int N, /* number of nodes is parameter */
@@ -225,16 +279,13 @@ int main(int argc, char *argv[])
 
     /*----- Escalonando eventos de teste para o inicio da simulaçao -----*/
     for (i = 0; i < N; i++)
-    {
         schedule(test, 30.0, i);
-    }
+
     /*------------------------------------------------------------------*/
 
-    /*----- Escalonando o primeiro evento de falha (caso exista) -------------------------------*/
-    srand(0);
+    /*----- Escalonando o primeiro evento de falha (caso exista) -----*/
     if (total_faults)
         schedule(fault, 20.0, rand_process);
-    /*------------------------------------------------------------------*/
 
     /*----- Switch Case de eventos -----*/
     while (time() < 4000000.0)
@@ -281,15 +332,17 @@ int main(int argc, char *argv[])
 
                 tests++;
 
+                int nextRandom = next_random();
+                // printf("\n nextRandom %d \n", nextRandom);
                 /* O processo responsável, testa os processos em cada cluster de acordo com a função cis */
-                if (status(processo[nodesAux->nodes[0]].id) == 0 && next_random() < 7) // Caso o processo testado estiver correto
+                if (status(processo[nodesAux->nodes[0]].id) == 0 && nextRandom > PROBABILITY) // Caso o processo testado estiver correto
                 {
                     printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
 
                     if (processo[nodesAux->nodes[0]].state[token] % 2 == 1)
                     {
                         // schedule(fault, 0.0, token);
-                        scheduleFault(processo, token, N, nodesAux->nodes[0]);
+                        scheduleFault(token, N, nodesAux->nodes[0]);
                         break;
                     }
 
@@ -304,7 +357,10 @@ int main(int argc, char *argv[])
                 }
                 else // Caso o processo testado esteja falho
                 {
-                    printf("[Tempo:%6.1f] O processo %d testou o processo %d" ANSI_COLOR_RED " INCORRETO \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
+                    if (nextRandom <= PROBABILITY)
+                        printf("[Tempo:%6.1f] O processo %d testou o processo %d" ANSI_COLOR_RED " INCORRETO " ANSI_COLOR_RESET "(Falsa Suspeita)\n", time(), token, nodesAux->nodes[0]);
+                    else
+                        printf("[Tempo:%6.1f] O processo %d testou o processo %d" ANSI_COLOR_RED " INCORRETO \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
 
                     if (processo[token].state[nodesAux->nodes[0]] == -1)
                         processo[token].state[nodesAux->nodes[0]] = 1;
@@ -339,7 +395,9 @@ int main(int argc, char *argv[])
                             if (aux == token && alvo != token)
                             {
                                 tests++;
-                                if (status(processo[alvo].id) == 0)
+                                nextRandom = next_random();
+                                // printf("\n nextRandom %d \n", nextRandom);
+                                if (status(processo[alvo].id) == 0 && nextRandom > PROBABILITY)
                                 {
                                     printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, alvo);
 
@@ -352,7 +410,11 @@ int main(int argc, char *argv[])
                                 }
                                 else
                                 {
-                                    printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_RED "INCORRETO \n" ANSI_COLOR_RESET, time(), token, alvo);
+
+                                    if (nextRandom <= PROBABILITY)
+                                        printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_RED "INCORRETO " ANSI_COLOR_RESET "(Falsa Suspeita)\n", time(), token, alvo);
+                                    else
+                                        printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_RED "INCORRETO \n" ANSI_COLOR_RESET, time(), token, alvo);
 
                                     if (processo[token].state[alvo] % 2 != 1)
                                         processo[token].state[alvo]++;
@@ -388,38 +450,8 @@ int main(int argc, char *argv[])
 
         // Caso evento seja uma falha
         case fault:
-            scheduleFault(processo, token, N, -1);
-
-            // r = request(processo[token].id, token, 0);
-            // if (r != 0)
-            // {
-            //     puts("Não foi possível falhar o nodo...");
-            //     break;
-            // }
-            // total_faults--;
-            // global_state[token]++;
-            // events++;
-            // // Adiciona na pilha o token
-            // node *node = malloc(sizeof(node));
-            // node->value = rand_process;
-            // push(pilha, node);
-            // printf(ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n");
-            // printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_RED "FALHOU" ANSI_COLOR_RESET "\n\n", time(), token);
-            // memset(processo[token].state, -1, N * sizeof(int));
-
+            scheduleFault(token, N, -1);
             break;
-
-            // Caso evento seja uma recuperação
-            // case recovery:
-            //     release(processo[token].id, token);
-            //     total_recovery--;
-            //     global_state[token]++;
-            //     events++;
-            //     printf(ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n");
-            //     printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_GREEN "RECUPEROU" ANSI_COLOR_RESET "\n\n", time(), token);
-            //     memset(processo[token].state, -1, N * sizeof(int)); // Reinciando o vetor State
-            //     processo[token].state[token] = 0;
-            //     break;
         }
     }
 }
