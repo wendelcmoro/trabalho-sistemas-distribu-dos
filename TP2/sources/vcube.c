@@ -1,10 +1,10 @@
 /* --------------------------------------------------------------------------------------
    Disciplina Sistemas Distribuídos
-   Objetivo: Implementação do VCube
+   Objetivo: Implementação do VCube com detecção de falsas suspeitas
    Restricoes: O programa assume que o usuario entrou com os valores corretos, inteiros.
 
    Autores: Wendel Caiu Moro e Bruno Augusto Luvizott
-   Data da ultima atualizacao: 25/01/2023
+   Data da ultima atualizacao: 05/02/2023
 ----------------------------------------------------------------------------------------*/
 
 #include <stdio.h>
@@ -41,7 +41,7 @@
 int detectNextRound = 0; // Verifica se a rodada acabou
 int max_intervals;       // define um limite máximo de intervalos caso o sistemas ainda não tenha concluido a latencia de todos os eventos
 int total_faults;
-int total_recovery;
+int total_recovery = 0;
 int events;
 int current_round = 1;
 int tests;
@@ -60,6 +60,31 @@ typedef struct
 
 TipoProcesso *processo;
 
+void scheduleFault(TipoProcesso *processo, int token, int N, int suspeita)
+{
+    request(processo[token].id, token, 0);
+    total_faults--;
+    global_state[token]++;
+    events++;
+    // Adiciona na pilha o token
+    node *node = malloc(sizeof(node));
+    node->value = rand_process;
+    push(pilha, node);
+    if (suspeita == -1)
+    {
+        printf(ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n");
+        printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_RED "FALHOU" ANSI_COLOR_RESET "\n\n", time(), token);
+    }
+    else
+        printf("[Tempo:%6.1f] O processo %d DETECTOU SUA " ANSI_COLOR_RED "FALSA SUSPEITA" ANSI_COLOR_RESET " pelo processo %d e FINALIZOU! \n\n", time(), token, suspeita);
+
+    memset(processo[token].state, -1, N * sizeof(int));
+}
+
+int next_random()
+{
+    return rand() % 11;
+}
 // Imprime o vetor STATE de todos os processos
 void printStates(int N)
 {
@@ -67,7 +92,7 @@ void printStates(int N)
     detectNextRound = 0;
 
     // Escalona os proximos processos
-    if (max_intervals && (events || total_faults || total_recovery))
+    if (max_intervals)
     {
         max_intervals--;
         for (i = 0; i < N; i++)
@@ -147,6 +172,7 @@ int verifyLatency(int N)
 
 int main(int argc, char *argv[])
 {
+
     pilha = declareStack();
 
     static int N, /* number of nodes is parameter */
@@ -154,31 +180,24 @@ int main(int argc, char *argv[])
         event,
         r,
         i,
+        seed,
         old_latency = 0; // Marca a ultima latencia para verifica a latencia do novo evento
 
     static char fa_name[5];
 
-    if (argc != 6)
+    if (argc != 5)
     {
-        puts("Uso correto: ./vcube <num-processos> <num-intervalos> <num-falhas> <num-recuperacoes> <semente-numero-aleatorio>");
+        puts("Uso correto: ./vcube <num-processos> <num-intervalos> <num-falhas> <semente-numero-aleatorio>");
         exit(1);
     }
 
     N = atoi(argv[1]);
     max_intervals = atoi(argv[2]);
     total_faults = atoi(argv[3]);
-    total_recovery = atoi(argv[4]);
-    int seed = atoi(argv[5]);
+    seed = atoi(argv[4]);
+
+    // semente do número aletório
     srand(seed);
-
-    int random_number = rand() % 11;
-    printf("\n\n--> Número Aleatorio: %d\n", random_number);
-
-    if ((total_faults < total_recovery))
-    {
-        puts("Uso correto: <num-recuperacoes> nao pode ser maior que <num-falhas>");
-        exit(1);
-    }
 
     smpl(0, "VCUBE");
     reset();
@@ -263,9 +282,16 @@ int main(int argc, char *argv[])
                 tests++;
 
                 /* O processo responsável, testa os processos em cada cluster de acordo com a função cis */
-                if (status(processo[nodesAux->nodes[0]].id) == 0) // Caso o processo testado estiver correto
+                if (status(processo[nodesAux->nodes[0]].id) == 0 && next_random() < 7) // Caso o processo testado estiver correto
                 {
                     printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
+
+                    if (processo[nodesAux->nodes[0]].state[token] % 2 == 1)
+                    {
+                        // schedule(fault, 0.0, token);
+                        scheduleFault(processo, token, N, nodesAux->nodes[0]);
+                        break;
+                    }
 
                     if (processo[token].state[nodesAux->nodes[0]] % 2 != 0)
                         processo[token].state[nodesAux->nodes[0]]++;
@@ -362,36 +388,38 @@ int main(int argc, char *argv[])
 
         // Caso evento seja uma falha
         case fault:
-            r = request(processo[token].id, token, 0);
-            if (r != 0)
-            {
-                puts("Não foi possível falhar o nodo...");
-                break;
-            }
-            total_faults--;
-            global_state[token]++;
-            events++;
-            // Adiciona na pilha o token
-            node *node = malloc(sizeof(node));
-            node->value = rand_process;
-            push(pilha, node);
-            printf(ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n");
-            printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_RED "FALHOU" ANSI_COLOR_RESET "\n\n", time(), token);
-            memset(processo[token].state, -1, N * sizeof(int));
+            scheduleFault(processo, token, N, -1);
+
+            // r = request(processo[token].id, token, 0);
+            // if (r != 0)
+            // {
+            //     puts("Não foi possível falhar o nodo...");
+            //     break;
+            // }
+            // total_faults--;
+            // global_state[token]++;
+            // events++;
+            // // Adiciona na pilha o token
+            // node *node = malloc(sizeof(node));
+            // node->value = rand_process;
+            // push(pilha, node);
+            // printf(ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n");
+            // printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_RED "FALHOU" ANSI_COLOR_RESET "\n\n", time(), token);
+            // memset(processo[token].state, -1, N * sizeof(int));
 
             break;
 
-        // Caso evento seja uma recuperação
-        case recovery:
-            release(processo[token].id, token);
-            total_recovery--;
-            global_state[token]++;
-            events++;
-            printf(ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n");
-            printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_GREEN "RECUPEROU" ANSI_COLOR_RESET "\n\n", time(), token);
-            memset(processo[token].state, -1, N * sizeof(int)); // Reinciando o vetor State
-            processo[token].state[token] = 0;
-            break;
+            // Caso evento seja uma recuperação
+            // case recovery:
+            //     release(processo[token].id, token);
+            //     total_recovery--;
+            //     global_state[token]++;
+            //     events++;
+            //     printf(ANSI_COLOR_BLUE "EVENTO:" ANSI_COLOR_RESET "\n");
+            //     printf("[Tempo:%6.1f] O processo %d " ANSI_COLOR_GREEN "RECUPEROU" ANSI_COLOR_RESET "\n\n", time(), token);
+            //     memset(processo[token].state, -1, N * sizeof(int)); // Reinciando o vetor State
+            //     processo[token].state[token] = 0;
+            //     break;
         }
     }
 }
