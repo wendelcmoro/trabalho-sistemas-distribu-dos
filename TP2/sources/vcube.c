@@ -9,26 +9,27 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+// #include <time.h>
 #include "cisj.h"
 #include "smpl.h"
 #include "math.h"
 #include "stack.h"
 
-#define ANSI_COLOR_RED ""
-#define ANSI_COLOR_GREEN ""
-#define ANSI_COLOR_YELLOW ""
-#define ANSI_COLOR_BLUE ""
-#define ANSI_COLOR_MAGENTA ""
-#define ANSI_COLOR_CYAN ""
-#define ANSI_COLOR_RESET ""
+// #define ANSI_COLOR_RED ""
+// #define ANSI_COLOR_GREEN ""
+// #define ANSI_COLOR_YELLOW ""
+// #define ANSI_COLOR_BLUE ""
+// #define ANSI_COLOR_MAGENTA ""
+// #define ANSI_COLOR_CYAN ""
+// #define ANSI_COLOR_RESET ""
 
-// #define ANSI_COLOR_RED "\x1b[31m"
-// #define ANSI_COLOR_GREEN "\x1b[32m"
-// #define ANSI_COLOR_YELLOW "\x1b[33m"
-// #define ANSI_COLOR_BLUE "\x1b[34m"
-// #define ANSI_COLOR_MAGENTA "\x1b[35m"
-// #define ANSI_COLOR_CYAN "\x1b[36m"
-// #define ANSI_COLOR_RESET "\x1b[0m"
+#define ANSI_COLOR_RED "\x1b[31m"
+#define ANSI_COLOR_GREEN "\x1b[32m"
+#define ANSI_COLOR_YELLOW "\x1b[33m"
+#define ANSI_COLOR_BLUE "\x1b[34m"
+#define ANSI_COLOR_MAGENTA "\x1b[35m"
+#define ANSI_COLOR_CYAN "\x1b[36m"
+#define ANSI_COLOR_RESET "\x1b[0m"
 
 /* cada processo conta seu tempo */
 
@@ -157,9 +158,9 @@ int main(int argc, char *argv[])
 
     static char fa_name[5];
 
-    if (argc != 5)
+    if (argc != 6)
     {
-        puts("Uso correto: ./vcube <num-processos> <num-intervalos> <num-falhas> <num-recuperacoes>");
+        puts("Uso correto: ./vcube <num-processos> <num-intervalos> <num-falhas> <num-recuperacoes> <semente-numero-aleatorio>");
         exit(1);
     }
 
@@ -167,6 +168,11 @@ int main(int argc, char *argv[])
     max_intervals = atoi(argv[2]);
     total_faults = atoi(argv[3]);
     total_recovery = atoi(argv[4]);
+    int seed = atoi(argv[5]);
+    srand(seed);
+
+    int random_number = rand() % 11;
+    printf("\n\n--> Número Aleatorio: %d\n", random_number);
 
     if ((total_faults < total_recovery))
     {
