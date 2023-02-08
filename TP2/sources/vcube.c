@@ -117,7 +117,7 @@ void printStates(int N)
     printf("Número de testes executado até o momento: %d\n\n", tests);
     current_round++;
 
-    // Print de módulos detectados
+    // Print de componentes detectados
     node *aux = malloc(sizeof(node));
 
     int *aux2 = malloc(sizeof(int) * N);
@@ -131,11 +131,14 @@ void printStates(int N)
         if (aux2[i] % 2 == 1 || aux2[i] == -1)
             continue;
 
-        printf("Modulo: [ %2d",i);
+        for (int j = 0; j < N; j++)
+            aux2[j] = global_state[j];
+
+        printf("Componente: [ %2d",i);
         count = 1;
         for (int j = 0; j < N; j++)
         {
-            if (processo[i].state[j] % 2 == 0 && aux2[j] != -1 && j != i && aux2[j] % 2 == 0)
+            if (processo[i].state[j] % 2 == 0 && j != i && global_state[j] % 2 == 0)
             {
                 if (count == 0)
                     printf(" %2d", j);
@@ -160,7 +163,8 @@ void printStates(int N)
 
             for (int j = 0; j < N; j++)
             {
-                if (processo[aux->value].state[j] % 2 == 0 && aux2[j] != -1 && aux2[j] % 2 == 0 && j != i)
+                // printf("\n---  %d ---\n",processo[aux->value].id);
+                if (processo[aux->value].state[j] % 2 == 0 && global_state[j] % 2 == 0 && aux2[j]!= -1 && j != i && aux->value != j)
                 {
                     if (count == 0)
                         printf(" %2d", j);
