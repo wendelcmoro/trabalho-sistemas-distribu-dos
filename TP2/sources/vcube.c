@@ -337,7 +337,6 @@ int main(int argc, char *argv[])
                 tests++;
 
                 int nextRandom = next_random();
-                // printf("\n nextRandom %d \n", nextRandom);
                 /* O processo responsável, testa os processos em cada cluster de acordo com a função cis */
                 if (status(processo[nodesAux->nodes[0]].id) == 0 && nextRandom > PROBABILITY) // Caso o processo testado estiver correto
                 {
@@ -400,7 +399,6 @@ int main(int argc, char *argv[])
                             {
                                 tests++;
                                 nextRandom = next_random();
-                                // printf("\n nextRandom %d \n", nextRandom);
                                 if (status(processo[alvo].id) == 0 && nextRandom > PROBABILITY)
                                 {
                                     printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, alvo);
