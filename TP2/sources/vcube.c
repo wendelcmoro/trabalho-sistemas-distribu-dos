@@ -163,7 +163,6 @@ void printStates(int N)
 
             for (int j = 0; j < N; j++)
             {
-                // printf("\n---  %d ---\n",processo[aux->value].id);
                 if (processo[aux->value].state[j] % 2 == 0 && global_state[j] % 2 == 0 && aux2[j] != -1 && j != i && aux->value != j)
                 {
                     if (count == 0)
