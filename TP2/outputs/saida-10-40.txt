@@ -1,0 +1,401 @@
+--> Número de clusters: 4
+--> Número de processos: 10
+
+Processo 0
+[Tempo:  30.0] O processo 0 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  30.0] O processo 0 testou o processo 2 INCORRETO (Falsa Suspeita)
+[Tempo:  30.0] O processo 0 testou o processo 3 CORRETO
+[Tempo:  30.0] O processo 0 testou o processo 4 INCORRETO (Falsa Suspeita)
+[Tempo:  30.0] O processo 0 testou o processo 5 CORRETO
+[Tempo:  30.0] O processo 0 testou o processo 8 CORRETO
+[Tempo:  30.0] O processo 0 testou o processo 9 INCORRETO (Falsa Suspeita)
+
+Processo 1
+[Tempo:  30.0] O processo 1 testou o processo 0 CORRETO
+[Tempo:  30.0] O processo 1 DETECTOU SUA FALSA SUSPEITA pelo processo 0 e FINALIZOU!
+
+
+Processo 2
+[Tempo:  30.0] O processo 2 testou o processo 3 INCORRETO (Falsa Suspeita)
+[Tempo:  30.0] O processo 2 testou o processo 0 CORRETO
+[Tempo:  30.0] O processo 2 DETECTOU SUA FALSA SUSPEITA pelo processo 0 e FINALIZOU!
+
+
+Processo 3
+[Tempo:  30.0] O processo 3 testou o processo 2 INCORRETO (Falsa Suspeita)
+[Tempo:  30.0] O processo 3 testou o processo 1 INCORRETO
+[Tempo:  30.0] O processo 3 testou o processo 0 CORRETO
+[Tempo:  30.0] O processo 3 testou o processo 7 CORRETO
+[Tempo:  30.0] O processo 3 testou o processo 6 INCORRETO (Falsa Suspeita)
+
+Processo 4
+[Tempo:  30.0] O processo 4 testou o processo 5 CORRETO
+[Tempo:  30.0] O processo 4 testou o processo 6 CORRETO
+[Tempo:  30.0] O processo 4 testou o processo 0 CORRETO
+[Tempo:  30.0] O processo 4 DETECTOU SUA FALSA SUSPEITA pelo processo 0 e FINALIZOU!
+
+
+Processo 5
+[Tempo:  30.0] O processo 5 testou o processo 4 INCORRETO
+[Tempo:  30.0] O processo 5 testou o processo 7 CORRETO
+[Tempo:  30.0] O processo 5 testou o processo 6 CORRETO
+[Tempo:  30.0] O processo 5 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  30.0] O processo 5 testou o processo 0 INCORRETO (Falsa Suspeita)
+
+Processo 6
+[Tempo:  30.0] O processo 6 testou o processo 7 INCORRETO (Falsa Suspeita)
+[Tempo:  30.0] O processo 6 testou o processo 4 INCORRETO
+[Tempo:  30.0] O processo 6 testou o processo 5 CORRETO
+[Tempo:  30.0] O processo 6 testou o processo 2 INCORRETO
+[Tempo:  30.0] O processo 6 testou o processo 3 INCORRETO (Falsa Suspeita)
+
+Processo 7
+[Tempo:  30.0] O processo 7 testou o processo 6 CORRETO
+[Tempo:  30.0] O processo 7 DETECTOU SUA FALSA SUSPEITA pelo processo 6 e FINALIZOU!
+
+
+Processo 8
+[Tempo:  30.0] O processo 8 testou o processo 9 CORRETO
+[Tempo:  30.0] O processo 8 testou o processo 0 CORRETO
+
+Processo 9
+[Tempo:  30.0] O processo 9 testou o processo 8 CORRETO
+[Tempo:  30.0] O processo 9 testou o processo 1 INCORRETO
+
+Vetor states na rodada de testes 1:
+Processo  0: [ 0 1 1 0 1 0 - - 0 0 ]
+Processo  1: [ - - - - - - - - - - ]
+Processo  2: [ - - - - - - - - - - ]
+Processo  3: [ 0 1 1 0 1 0 0 0 0 0 ]
+Processo  4: [ - - - - - - - - - - ]
+Processo  5: [ 0 1 - - 1 0 0 0 - - ]
+Processo  6: [ 0 1 1 0 1 0 0 1 - - ]
+Processo  7: [ - - - - - - - - - - ]
+Processo  8: [ 0 1 1 0 1 0 - - 0 0 ]
+Processo  9: [ 0 1 1 0 1 0 - - 0 0 ]
+Número de testes executado até o momento: 33
+
+Componente: [  0 ,  3 ,  5 ,  8 ,  9,  6 ]
+Processo 0
+[Tempo:  32.0] O processo 0 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  32.0] O processo 0 testou o processo 2 INCORRETO (Falsa Suspeita)
+[Tempo:  32.0] O processo 0 testou o processo 3 CORRETO
+[Tempo:  32.0] O processo 0 testou o processo 4 INCORRETO
+[Tempo:  32.0] O processo 0 testou o processo 5 CORRETO
+[Tempo:  32.0] O processo 0 testou o processo 8 CORRETO
+[Tempo:  32.0] O processo 0 testou o processo 9 INCORRETO (Falsa Suspeita)
+
+Processo 1
+[Tempo:  32.0] ESTOU FALHO!
+
+Processo 2
+[Tempo:  32.0] ESTOU FALHO!
+
+Processo 3
+[Tempo:  32.0] O processo 3 testou o processo 2 INCORRETO
+[Tempo:  32.0] O processo 3 testou o processo 1 INCORRETO
+[Tempo:  32.0] O processo 3 testou o processo 0 CORRETO
+[Tempo:  32.0] O processo 3 testou o processo 7 INCORRETO
+[Tempo:  32.0] O processo 3 testou o processo 6 CORRETO
+
+Processo 4
+[Tempo:  32.0] ESTOU FALHO!
+
+Processo 5
+[Tempo:  32.0] O processo 5 testou o processo 4 INCORRETO
+[Tempo:  32.0] O processo 5 testou o processo 7 INCORRETO
+[Tempo:  32.0] O processo 5 testou o processo 6 CORRETO
+[Tempo:  32.0] O processo 5 testou o processo 1 INCORRETO
+[Tempo:  32.0] O processo 5 testou o processo 0 INCORRETO (Falsa Suspeita)
+
+Processo 6
+[Tempo:  32.0] O processo 6 testou o processo 7 INCORRETO
+[Tempo:  32.0] O processo 6 testou o processo 4 INCORRETO
+[Tempo:  32.0] O processo 6 testou o processo 5 CORRETO
+[Tempo:  32.0] O processo 6 testou o processo 2 INCORRETO
+[Tempo:  32.0] O processo 6 testou o processo 3 INCORRETO (Falsa Suspeita)
+
+Processo 7
+[Tempo:  32.0] ESTOU FALHO!
+
+Processo 8
+[Tempo:  32.0] O processo 8 testou o processo 9 CORRETO
+[Tempo:  32.0] O processo 8 testou o processo 0 INCORRETO (Falsa Suspeita)
+
+Processo 9
+[Tempo:  32.0] O processo 9 testou o processo 8 INCORRETO (Falsa Suspeita)
+[Tempo:  32.0] O processo 9 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  32.0] O processo 9 testou o processo 0 INCORRETO (Falsa Suspeita)
+
+Vetor states na rodada de testes 2:
+Processo  0: [ 0 1 1 0 1 0 0 0 0 1 ]
+Processo  1: [ - - - - - - - - - - ]
+Processo  2: [ - - - - - - - - - - ]
+Processo  3: [ 0 1 1 0 1 0 0 1 0 1 ]
+Processo  4: [ - - - - - - - - - - ]
+Processo  5: [ 1 1 1 0 1 0 0 1 - - ]
+Processo  6: [ 1 1 1 1 1 0 0 1 - - ]
+Processo  7: [ - - - - - - - - - - ]
+Processo  8: [ 1 1 1 0 1 0 - - 0 0 ]
+Processo  9: [ 1 1 1 0 1 0 - - 1 0 ]
+Número de testes executado até o momento: 60
+
+Componente: [  0 ,  3 ,  5 ,  6 ,  8,  9 ]
+Processo 0
+[Tempo:  34.0] O processo 0 testou o processo 1 INCORRETO
+[Tempo:  34.0] O processo 0 testou o processo 2 INCORRETO
+[Tempo:  34.0] O processo 0 testou o processo 3 CORRETO
+[Tempo:  34.0] O processo 0 testou o processo 4 INCORRETO (Falsa Suspeita)
+[Tempo:  34.0] O processo 0 testou o processo 5 CORRETO
+[Tempo:  34.0] O processo 0 testou o processo 8 CORRETO
+[Tempo:  34.0] O processo 0 DETECTOU SUA FALSA SUSPEITA pelo processo 8 e FINALIZOU!
+
+
+Processo 1
+[Tempo:  34.0] ESTOU FALHO!
+
+Processo 2
+[Tempo:  34.0] ESTOU FALHO!
+
+Processo 3
+[Tempo:  34.0] O processo 3 testou o processo 2 INCORRETO
+[Tempo:  34.0] O processo 3 testou o processo 1 INCORRETO
+[Tempo:  34.0] O processo 3 testou o processo 0 INCORRETO
+[Tempo:  34.0] O processo 3 testou o processo 7 INCORRETO
+[Tempo:  34.0] O processo 3 testou o processo 4 INCORRETO
+[Tempo:  34.0] O processo 3 testou o processo 5 CORRETO
+[Tempo:  34.0] O processo 3 testou o processo 6 CORRETO
+
+Processo 4
+[Tempo:  34.0] ESTOU FALHO!
+
+Processo 5
+[Tempo:  34.0] O processo 5 testou o processo 4 INCORRETO
+[Tempo:  34.0] O processo 5 testou o processo 7 INCORRETO (Falsa Suspeita)
+[Tempo:  34.0] O processo 5 testou o processo 6 CORRETO
+[Tempo:  34.0] O processo 5 testou o processo 1 INCORRETO
+[Tempo:  34.0] O processo 5 testou o processo 0 INCORRETO (Falsa Suspeita)
+
+Processo 6
+[Tempo:  34.0] O processo 6 testou o processo 7 INCORRETO (Falsa Suspeita)
+[Tempo:  34.0] O processo 6 testou o processo 4 INCORRETO
+[Tempo:  34.0] O processo 6 testou o processo 5 INCORRETO (Falsa Suspeita)
+[Tempo:  34.0] O processo 6 testou o processo 2 INCORRETO (Falsa Suspeita)
+[Tempo:  34.0] O processo 6 testou o processo 0 INCORRETO (Falsa Suspeita)
+[Tempo:  34.0] O processo 6 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  34.0] O processo 6 testou o processo 3 CORRETO
+
+Processo 7
+[Tempo:  34.0] ESTOU FALHO!
+
+Processo 8
+[Tempo:  34.0] O processo 8 testou o processo 9 CORRETO
+[Tempo:  34.0] O processo 8 DETECTOU SUA FALSA SUSPEITA pelo processo 9 e FINALIZOU!
+
+
+Processo 9
+[Tempo:  34.0] O processo 9 testou o processo 8 INCORRETO (Falsa Suspeita)
+[Tempo:  34.0] O processo 9 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  34.0] O processo 9 testou o processo 0 INCORRETO
+
+Vetor states na rodada de testes 3:
+Processo  0: [ - - - - - - - - - - ]
+Processo  1: [ - - - - - - - - - - ]
+Processo  2: [ - - - - - - - - - - ]
+Processo  3: [ 1 1 1 0 1 0 0 1 0 1 ]
+Processo  4: [ - - - - - - - - - - ]
+Processo  5: [ 1 1 1 1 1 0 0 1 - - ]
+Processo  6: [ 1 1 1 2 1 1 0 1 0 1 ]
+Processo  7: [ - - - - - - - - - - ]
+Processo  8: [ - - - - - - - - - - ]
+Processo  9: [ 1 1 1 0 1 0 - - 1 0 ]
+Número de testes executado até o momento: 89
+
+Componente: [  9 ,  3 ,  5,  6 ]
+Processo 0
+[Tempo:  36.0] ESTOU FALHO!
+
+Processo 1
+[Tempo:  36.0] ESTOU FALHO!
+
+Processo 2
+[Tempo:  36.0] ESTOU FALHO!
+
+Processo 3
+[Tempo:  36.0] O processo 3 testou o processo 2 INCORRETO (Falsa Suspeita)
+[Tempo:  36.0] O processo 3 testou o processo 1 INCORRETO
+[Tempo:  36.0] O processo 3 testou o processo 0 INCORRETO (Falsa Suspeita)
+[Tempo:  36.0] O processo 3 testou o processo 7 INCORRETO (Falsa Suspeita)
+[Tempo:  36.0] O processo 3 testou o processo 4 INCORRETO
+[Tempo:  36.0] O processo 3 testou o processo 5 INCORRETO (Falsa Suspeita)
+[Tempo:  36.0] O processo 3 testou o processo 6 INCORRETO (Falsa Suspeita)
+
+Processo 4
+[Tempo:  36.0] ESTOU FALHO!
+
+Processo 5
+[Tempo:  36.0] O processo 5 testou o processo 4 INCORRETO
+[Tempo:  36.0] O processo 5 testou o processo 7 INCORRETO (Falsa Suspeita)
+[Tempo:  36.0] O processo 5 testou o processo 6 CORRETO
+[Tempo:  36.0] O processo 5 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  36.0] O processo 5 testou o processo 0 INCORRETO (Falsa Suspeita)
+
+Processo 6
+[Tempo:  36.0] O processo 6 testou o processo 7 INCORRETO (Falsa Suspeita)
+[Tempo:  36.0] O processo 6 testou o processo 4 INCORRETO
+[Tempo:  36.0] O processo 6 testou o processo 5 CORRETO
+[Tempo:  36.0] O processo 6 testou o processo 2 INCORRETO
+[Tempo:  36.0] O processo 6 testou o processo 3 CORRETO
+
+Processo 7
+[Tempo:  36.0] ESTOU FALHO!
+
+Processo 8
+[Tempo:  36.0] ESTOU FALHO!
+
+Processo 9
+[Tempo:  36.0] O processo 9 testou o processo 8 INCORRETO (Falsa Suspeita)
+[Tempo:  36.0] O processo 9 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  36.0] O processo 9 testou o processo 0 INCORRETO (Falsa Suspeita)
+
+Vetor states na rodada de testes 4:
+Processo  0: [ - - - - - - - - - - ]
+Processo  1: [ - - - - - - - - - - ]
+Processo  2: [ - - - - - - - - - - ]
+Processo  3: [ 1 1 1 0 1 1 1 1 0 1 ]
+Processo  4: [ - - - - - - - - - - ]
+Processo  5: [ 1 1 1 2 1 0 0 1 0 1 ]
+Processo  6: [ 1 1 1 2 1 2 0 1 0 1 ]
+Processo  7: [ - - - - - - - - - - ]
+Processo  8: [ - - - - - - - - - - ]
+Processo  9: [ 1 1 1 0 1 0 - - 1 0 ]
+Número de testes executado até o momento: 109
+
+Componente: [  9 ,  3 ,  5,  6 ]
+Processo 0
+[Tempo:  38.0] ESTOU FALHO!
+
+Processo 1
+[Tempo:  38.0] ESTOU FALHO!
+
+Processo 2
+[Tempo:  38.0] ESTOU FALHO!
+
+Processo 3
+[Tempo:  38.0] O processo 3 testou o processo 2 INCORRETO (Falsa Suspeita)
+[Tempo:  38.0] O processo 3 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  38.0] O processo 3 testou o processo 0 INCORRETO
+[Tempo:  38.0] O processo 3 testou o processo 7 INCORRETO
+[Tempo:  38.0] O processo 3 testou o processo 4 INCORRETO
+[Tempo:  38.0] O processo 3 testou o processo 5 CORRETO
+[Tempo:  38.0] O processo 3 testou o processo 6 CORRETO
+
+Processo 4
+[Tempo:  38.0] ESTOU FALHO!
+
+Processo 5
+[Tempo:  38.0] O processo 5 testou o processo 4 INCORRETO (Falsa Suspeita)
+[Tempo:  38.0] O processo 5 testou o processo 7 INCORRETO
+[Tempo:  38.0] O processo 5 testou o processo 6 INCORRETO (Falsa Suspeita)
+[Tempo:  38.0] O processo 5 testou o processo 1 INCORRETO
+[Tempo:  38.0] O processo 5 testou o processo 0 INCORRETO (Falsa Suspeita)
+[Tempo:  38.0] O processo 5 testou o processo 2 INCORRETO
+[Tempo:  38.0] O processo 5 testou o processo 3 INCORRETO (Falsa Suspeita)
+
+Processo 6
+[Tempo:  38.0] O processo 6 testou o processo 7 INCORRETO
+[Tempo:  38.0] O processo 6 testou o processo 4 INCORRETO (Falsa Suspeita)
+[Tempo:  38.0] O processo 6 testou o processo 5 CORRETO
+[Tempo:  38.0] O processo 6 testou o processo 2 INCORRETO (Falsa Suspeita)
+[Tempo:  38.0] O processo 6 testou o processo 3 CORRETO
+
+Processo 7
+[Tempo:  38.0] ESTOU FALHO!
+
+Processo 8
+[Tempo:  38.0] ESTOU FALHO!
+
+Processo 9
+[Tempo:  38.0] O processo 9 testou o processo 8 INCORRETO (Falsa Suspeita)
+[Tempo:  38.0] O processo 9 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  38.0] O processo 9 testou o processo 0 INCORRETO
+
+Vetor states na rodada de testes 5:
+Processo  0: [ - - - - - - - - - - ]
+Processo  1: [ - - - - - - - - - - ]
+Processo  2: [ - - - - - - - - - - ]
+Processo  3: [ 1 1 1 0 1 2 2 1 0 1 ]
+Processo  4: [ - - - - - - - - - - ]
+Processo  5: [ 1 1 1 3 1 0 1 1 0 1 ]
+Processo  6: [ 1 1 1 4 1 2 0 1 0 1 ]
+Processo  7: [ - - - - - - - - - - ]
+Processo  8: [ - - - - - - - - - - ]
+Processo  9: [ 1 1 1 0 1 0 - - 1 0 ]
+Número de testes executado até o momento: 131
+
+Componente: [  9 ,  3 ,  5,  6 ]
+Processo 0
+[Tempo:  40.0] ESTOU FALHO!
+
+Processo 1
+[Tempo:  40.0] ESTOU FALHO!
+
+Processo 2
+[Tempo:  40.0] ESTOU FALHO!
+
+Processo 3
+[Tempo:  40.0] O processo 3 testou o processo 2 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 3 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 3 testou o processo 0 INCORRETO
+[Tempo:  40.0] O processo 3 testou o processo 7 INCORRETO
+[Tempo:  40.0] O processo 3 testou o processo 4 INCORRETO
+[Tempo:  40.0] O processo 3 testou o processo 5 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 3 testou o processo 6 CORRETO
+
+Processo 4
+[Tempo:  40.0] ESTOU FALHO!
+
+Processo 5
+[Tempo:  40.0] O processo 5 testou o processo 4 INCORRETO
+[Tempo:  40.0] O processo 5 testou o processo 7 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 5 testou o processo 6 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 5 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 5 testou o processo 0 INCORRETO
+[Tempo:  40.0] O processo 5 testou o processo 2 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 5 testou o processo 3 INCORRETO (Falsa Suspeita)
+
+Processo 6
+[Tempo:  40.0] O processo 6 testou o processo 7 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 6 testou o processo 4 INCORRETO
+[Tempo:  40.0] O processo 6 testou o processo 5 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 6 testou o processo 2 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 6 testou o processo 0 INCORRETO
+[Tempo:  40.0] O processo 6 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 6 testou o processo 3 CORRETO
+
+Processo 7
+[Tempo:  40.0] ESTOU FALHO!
+
+Processo 8
+[Tempo:  40.0] ESTOU FALHO!
+
+Processo 9
+[Tempo:  40.0] O processo 9 testou o processo 8 INCORRETO
+[Tempo:  40.0] O processo 9 testou o processo 1 INCORRETO (Falsa Suspeita)
+[Tempo:  40.0] O processo 9 testou o processo 0 INCORRETO
+
+Vetor states na rodada de testes 6:
+Processo  0: [ - - - - - - - - - - ]
+Processo  1: [ - - - - - - - - - - ]
+Processo  2: [ - - - - - - - - - - ]
+Processo  3: [ 1 1 1 0 1 3 2 1 0 1 ]
+Processo  4: [ - - - - - - - - - - ]
+Processo  5: [ 1 1 1 3 1 0 1 1 0 1 ]
+Processo  6: [ 1 1 1 4 1 3 0 1 0 1 ]
+Processo  7: [ - - - - - - - - - - ]
+Processo  8: [ - - - - - - - - - - ]
+Processo  9: [ 1 1 1 0 1 0 - - 1 0 ]
+Número de testes executado até o momento: 155
+
+Componente: [  5 ]
+Componente: [  9 ,  3 ,  5,  6 ]
