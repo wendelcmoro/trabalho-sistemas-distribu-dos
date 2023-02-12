@@ -37,7 +37,7 @@
 #define test 1
 #define fault 2
 #define recovery 3
-#define PROBABILITY 10 // Probabilidade de falha
+#define PROBABILITY 40 // Probabilidade de falha
 
 int detectNextRound = 0; // Verifica se a rodada acabou
 int max_intervals;       // define um limite máximo de intervalos caso o sistemas ainda não tenha concluido a latencia de todos os eventos
