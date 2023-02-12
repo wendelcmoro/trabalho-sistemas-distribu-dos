@@ -134,7 +134,7 @@ void printStates(int N)
         for (int j = 0; j < N; j++)
             aux2[j] = global_state[j];
 
-        printf("Componente: [ %2d",i);
+        printf("Componente: [ %2d", i);
         count = 1;
         for (int j = 0; j < N; j++)
         {
@@ -164,7 +164,7 @@ void printStates(int N)
             for (int j = 0; j < N; j++)
             {
                 // printf("\n---  %d ---\n",processo[aux->value].id);
-                if (processo[aux->value].state[j] % 2 == 0 && global_state[j] % 2 == 0 && aux2[j]!= -1 && j != i && aux->value != j)
+                if (processo[aux->value].state[j] % 2 == 0 && global_state[j] % 2 == 0 && aux2[j] != -1 && j != i && aux->value != j)
                 {
                     if (count == 0)
                         printf(" %2d", j);
@@ -337,14 +337,16 @@ int main(int argc, char *argv[])
                 tests++;
 
                 int nextRandom = next_random();
+
                 /* O processo responsável, testa os processos em cada cluster de acordo com a função cis */
+                // Verifica a probabilidade, caso o processo esteja correto, para considerar uma falsa suspeita
                 if (status(processo[nodesAux->nodes[0]].id) == 0 && nextRandom > PROBABILITY) // Caso o processo testado estiver correto
                 {
                     printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, nodesAux->nodes[0]);
 
+                    // O processo se encerra caso tenha detectado sua falsa suspeita a partir de outro processo
                     if (processo[nodesAux->nodes[0]].state[token] % 2 == 1)
                     {
-                        // schedule(fault, 0.0, token);
                         scheduleFault(token, N, nodesAux->nodes[0]);
                         break;
                     }
@@ -399,6 +401,7 @@ int main(int argc, char *argv[])
                             {
                                 tests++;
                                 nextRandom = next_random();
+                                // Verifica a probabilidade, caso o processo esteja correto, para considerar uma falsa suspeita
                                 if (status(processo[alvo].id) == 0 && nextRandom > PROBABILITY)
                                 {
                                     printf("[Tempo:%6.1f] O processo %d testou o processo %d " ANSI_COLOR_GREEN "CORRETO  \n" ANSI_COLOR_RESET, time(), token, alvo);
