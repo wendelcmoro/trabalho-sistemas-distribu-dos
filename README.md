@@ -88,3 +88,6 @@ Arquivo:
 * log para 8 processos, 0 falhas e 0 recuperações: saida-8-0-0.txt(link aqui)
 * log para 8 processos, 1 falha e 0 recuperações: saida-8-1-0.txt(link aqui)
 * log para 8 processos, 2 falhas e 1 recuperação: saida-8-2-1.txt(link aqui)
+
+
+Período original em que o projeto foi feito: 1° Sem. 2023(Ajuste de Calendário Acadêmico do 2° Sem. 2022)
