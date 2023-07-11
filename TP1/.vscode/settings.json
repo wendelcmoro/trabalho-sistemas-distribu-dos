@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "stdio.h": "c",
-        "math.h": "c",
-        "smpl.h": "c",
-        "cisj.h": "c",
-        "stack.h": "c"
-    }
-}
